@@ -2,13 +2,13 @@
     sun公司制订的一种用来扩展web服务器功能的组件规范。
     (1)扩展web服务器功能
        web服务器通常只能处理静态资源的请求(即需要事先将html文件准备好)，可以使用servlet来扩展(
-                     即web服务器可以通过调用servlet来处理动态资源的请求，比如访问数据库)。
+       即web服务器可以通过调用servlet来处理动态资源的请求，比如访问数据库)。
     (2)组件规范
        1)什么是组件?
-                           符合一定规范，实现部分功能，并且需要部署到相应的容器里面才能运行的软件模块。
+         符合一定规范，实现部分功能，并且需要部署到相应的容器里面才能运行的软件模块。
          servlet是一个组件，需要部署到相应的servlet容器里面才能运行。
        2什么是容器？
-                          符合一定规范，提供组件的运行环境的程序。
+         符合一定规范，提供组件的运行环境的程序。
          tomcat就是一个容器，提供了servlet的运行环境。
 2.如何写一个servlet?
    step1,写一个java类，实现Servlet接口或者继承HttpServlet抽象类。注：通常选择继承的方式。
@@ -20,12 +20,12 @@
                     lib(可选, 放jar文件)
                     web.xml(部署描述文件)
    step4,部署
-                           将step3创建好的整个文件夹拷贝到servlet容器相应的位置。
-                           注：可以使用jar命令将step3创建好的整个文件夹压缩成一个".war"为后缀的文件，然后拷贝。
+         将step3创建好的整个文件夹拷贝到servlet容器相应的位置。
+         注：可以使用jar命令将step3创建好的整个文件夹压缩成一个".war"为后缀的文件，然后拷贝。
    step5,启动容器，访问servlet
          http://ip:port/appname/url-pattern
          http://localhost:8080/firstweb/hello
-                            注:url-pattern在web.xml文件中定义。
+         注:url-pattern在web.xml文件中定义。
 3.Tomcat的安装(www.apache.org)
   step1,将tomcat的安装文件解压到/home/soft01/注：/opt/apache-tomcat7.tar.gz
   step2,配置环境变量  
@@ -33,10 +33,10 @@
         CATALINA_HOME: tomcat的安装路径 比如/home/soft01/apache-tomcat7
         PATH:一些命令所在的路径   比如/home/soft01/apache-tomcat7/bin
   step3,启动tomcat
-                        打开终端cd /home/soft01/apache-tomcat7/bin
-             sh startup.sh
-                                        注: 也可以使用  sh catalina.sh run
-                                       打开浏览器，输入http://localhost:8080
+        打开终端cd /home/soft01/apache-tomcat7/bin
+        sh startup.sh
+        注: 也可以使用  sh catalina.sh run
+        打开浏览器，输入http://localhost:8080
   step4,关闭tomcat
         sh shutdown.sh
                             
