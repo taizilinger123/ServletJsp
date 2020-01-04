@@ -39,5 +39,6 @@
                                        打开浏览器，输入http://localhost:8080
   step4,关闭tomcat
         sh shutdown.sh
-                                  
+                            
+http://localhost:8080/web01/hello      
            

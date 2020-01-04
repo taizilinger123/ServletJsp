@@ -4,7 +4,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+  <servlet>
+     <servlet-name>helloServlet</servlet-name>
+     <!-- 完整的类名 -->
+     <servlet-class>web.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <!-- 两个name要一致 -->
+     <servlet-name>helloServlet</servlet-name>
+     <!-- 以/开头 -->
+     <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
 </web-app>
