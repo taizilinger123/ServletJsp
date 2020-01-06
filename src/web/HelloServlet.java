@@ -17,15 +17,18 @@ public class HelloServlet extends HttpServlet{
 	    */
 	   //处理
 	   String greeting = "";
-	   for(int i=0;i<Integer.parseInt(qty);i++){
-		    greeting += "<h1>hello Kitty</h1>";
+	   for(int i=0;i<Integer.parseInt(qty);i++){		    greeting += "<h1>待我长发及腰</h1>";
 	   }
-	   //设置服务器返回的数据类型	
-	   response.setContentType("text/html");
+	   //设置服务器返回的数据类型
+	   //unicode --->gbk,utf-8  编码
+	   //gbk--->unicode  解码
+	   response.setContentType("text/html;charset=utf-8");
 	   PrintWriter out = response.getWriter();
+	   //out默认情况下，会使用"iso-8859-1"来编码
 	   out.println(greeting);
 	   out.close();
    }
 }
 
 //http://localhost:8080/web01/hello?qty=8
+//http://localhost:8888/web02/hello.html
