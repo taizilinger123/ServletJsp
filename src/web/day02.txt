@@ -68,3 +68,11 @@ Date: Mon, 06 Jan 2020 12:01:55 GMT
 Window->Show View->Other->MyEclipse Common->TCP/IP Mointor就可以打开tcp/ip监控了,用法浏览器里输入http://localhost:8888/web02/hello?qty=8,具体可参考https://blog.csdn.net/xuwenwen_2013/article/details/50778245
 关闭webroot下的.jsp和.html可视化编辑器Window->Preferences->Editors->File Associations->找到右边的.jsp和.html把选中 MyEclipse  HTML Editor点击右侧 Default 按钮 —— 点击OK
 Project Deployments->Project(web02)->add/选中已有的项目->Redeploy->ok就重新配置了项目
+git branch  web02
+git branch -a
+git checkout web02
+git add * 
+git commit  -m  "2020-1-6"
+git push -u origin web02
+git log  --reset  版本号
+或者用myeclipse里的文件回退机制项目上右击restore from local history或者文件右击找到replace with->local history
