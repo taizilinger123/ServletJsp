@@ -10,14 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HelloServlet extends HttpServlet{
    public void service(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
+	   //request.setCharacterEncoding("utf-8");
 	   //读取请求参数值
 	   String qty = request.getParameter("qty");
+	   String uname = request.getParameter("uname");
+	   uname = new String(uname.getBytes("iso-8859-1"),"utf-8");
 	   /*
 	    * 通常需要对请求参数值做一些检查，比如，检查qty是不是一个合法的数字。
 	    */
 	   //处理
 	   String greeting = "";
-	   for(int i=0;i<Integer.parseInt(qty);i++){		    greeting += "<h1>待我长发及腰</h1>";
+	   for(int i=0;i<Integer.parseInt(qty);i++){		    
+		   greeting += "<h1>你好，" + uname + "</h1>";
 	   }
 	   //设置服务器返回的数据类型
 	   //unicode --->gbk,utf-8  编码

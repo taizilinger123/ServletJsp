@@ -43,6 +43,26 @@
            b2.不会将请求参数显示在浏览器地址栏，相对安全
            注：不会将请求参数加密。
  
+2.servlet输出中文
+  (1)为什么会有乱码
+      out.println方法在默认情况下，会使用"iso-8859-1"来编码。
+  (2)如何解决？
+      response.setContentType("text/html;charset=utf-8");
+3.表单包含有中文参数值
+  (1)为什么会有乱码
+     表单提交时，浏览器会对表单中的中文参数值进行编码。
+     注:会按照打开该表单所在的页面时的字符集来编码。
+     服务器端默认情况下，会使用"iso-8859-1"来解码。
+  (2)如何解决
+     step1,保证表单提交时，按照指定的字符集来编码。
+     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+     step2,服务器端使用对应的字符集来解码。
+         方式一 
+               request.setCharacterEncoding("utf-8");
+               注：只针对post请求有效。
+         方式二
+               
+     
  
 GET /web02/hello?qty=8 HTTP/1.1
     请求资源路径 2k
