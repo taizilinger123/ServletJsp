@@ -62,7 +62,7 @@
                注：只针对post请求有效。
          方式二
                uname = new String(uname.getBytes("iso-8859-1"),"utf-8");
-               注：先还原得到浏览器发送过来的字节数组，然后使用正确的字符集来解码。
+               注：先还原得到浏览器发送过来的字节数组，然后使用正确的字符集来解码,post和get请求都支持。
      
  
 GET /web02/hello?qty=8 HTTP/1.1
