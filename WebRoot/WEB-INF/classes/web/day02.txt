@@ -97,3 +97,4 @@ git commit  -m  "2020-1-6"
 git push -u origin web02
 git log  --reset  版本号
 或者用myeclipse里的文件回退机制项目上右击restore from local history或者文件右击找到replace with->local history
+http://localhost:8080/web02/addEmp.html
