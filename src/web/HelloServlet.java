@@ -15,6 +15,10 @@ public class HelloServlet extends HttpServlet{
 	   String qty = request.getParameter("qty");
 	   String uname = request.getParameter("uname");
 	   uname = new String(uname.getBytes("iso-8859-1"),"utf-8");
+	   String[] mps = request.getParameterValues("mp");
+	   for(int i=0;i<mps.length;i++){
+		   System.out.println(mps[i]);
+	   }
 	   /*
 	    * 通常需要对请求参数值做一些检查，比如，检查qty是不是一个合法的数字。
 	    */

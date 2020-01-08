@@ -63,7 +63,52 @@
          方式二
                uname = new String(uname.getBytes("iso-8859-1"),"utf-8");
                注：先还原得到浏览器发送过来的字节数组，然后使用正确的字符集来解码,post和get请求都支持。
-     
+4.读取请求参数值
+  (1)String request.getParameter(String paramName);
+     注:
+        a.paramName必须与实际发送过来的参数名一致，如果不一致，会获得null。
+        b.有可能获得""。
+  (2)String[] request.getParameterValues(String paramName)
+     注:
+        a.当有多个参数名相同时，使用该方法。
+          hello?mp=x1&mp=x2&mp=x3
+        b.对于多选框和单选框，如果不选择任何的选项的话，会获得null。
+
+5.使用jdbc访问数据库
+  step1,需要将jdbc驱动(jar文件)拷贝到WEB-INF\lib下。
+  step2,使用jdbc提供的一套api来访问数据库。
+  
+  mysql数据库的简单使用
+     1)登录mysql,wampserver64
+         mysql  -uroot  -p123456;
+     2)查看当前有哪些数据库
+         show databases;
+     3)创建一个新的数据库(同时设置缺省的字符集为utf-8)
+        mysql> create database  jsd1507db  default character set utf8;
+     4)使用某个数据库
+        use jsd1507db;
+     5)查看当前数据库有哪些表
+        show tables;
+     6)建表
+        create table emp(
+          id int primary key auto_increment,
+          name varchar(50),
+          salary double,
+          age  int
+        );
+        insert into emp(name,salary,age)values('Sally',2000,20);
+        insert into emp(name,salary,age)values('Eric',3000,22);
+        select * from emp;
+        注: 
+          auto_increment自增长列 
+        
+        create table emp(
+           id number(8) primary key,
+           name varchar2(50),
+           salary number(8,2),
+           age number(3)
+        );
+   
  
 GET /web02/hello?qty=8 HTTP/1.1
     请求资源路径 2k
