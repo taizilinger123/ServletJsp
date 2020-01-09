@@ -36,7 +36,8 @@ public class AddEmpServlet extends HttpServlet{
 		prep.setDouble(2, Double.parseDouble(salary));
 		prep.setInt(3, Integer.parseInt(age));
 		prep.executeUpdate();
-		out.println("添加成功");
+		out.println("添加成功<br/><br/>");
+		out.println("<a href='list'>员工列表</a>");
 	} catch (Exception e) {
 		/*
 		 * step1,记日志

@@ -8,8 +8,16 @@
      <servlet-name>addEmpServlet</servlet-name>
      <servlet-class>web.AddEmpServlet</servlet-class>
   </servlet>
+  <servlet>
+     <servlet-name>listEmpServlet</servlet-name>
+     <servlet-class>web.ListEmpServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
      <servlet-name>addEmpServlet</servlet-name>
      <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+     <servlet-name>listEmpServlet</servlet-name>
+     <url-pattern>/list</url-pattern>
   </servlet-mapping>
 </web-app>
