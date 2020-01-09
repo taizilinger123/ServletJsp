@@ -133,7 +133,7 @@ Date: Mon, 06 Jan 2020 12:01:55 GMT
 直接复制web01为web02需要右键web02->Properties->MyEclipse->web->Context Root->web Context-root:/web02改为然后再重新部署Manage Deployments就可以了
 Window->Show View->Other->MyEclipse Common->TCP/IP Mointor就可以打开tcp/ip监控了,用法浏览器里输入http://localhost:8888/web02/hello?qty=8,具体可参考https://blog.csdn.net/xuwenwen_2013/article/details/50778245
 关闭webroot下的.jsp和.html可视化编辑器Window->Preferences->Editors->File Associations->找到右边的.jsp和.html把选中 MyEclipse  HTML Editor点击右侧 Default 按钮 —— 点击OK
-Project Deployments->Project(web02)->add/选中已有的项目->Redeploy->ok就重新配置了项目，然后Tomcat 6.x->start开启，再浏览器输入地址http://localhost:8080/web02/addEmp.html
+Project Deployments->Project(web02)->add/选中已有的项目->Redeploy->ok就重新配置了项目，然后Tomcat 6.x->start开启，再浏览器输入地址http://localhost:8080/web02/addEmp.html->打开Wampserver64的mysql数据库就可以了。
 git branch  web02
 git branch -a
 git checkout web02
