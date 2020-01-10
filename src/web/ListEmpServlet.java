@@ -28,13 +28,13 @@ public class ListEmpServlet extends HttpServlet{
 		rst = prep.executeQuery();
 		//依据查询到的数据生成表格
 		out.println("<table border='1' width='60%' cellpadding='0' cellspacing='0'>");
-		out.println("<tr><td>ID</td><td>姓名</td><td>薪水</td><td>年龄</td></tr>");
+		out.println("<tr><td>ID</td><td>姓名</td><td>薪水</td><td>年龄</td><td>操作</td></tr>");
 		while(rst.next()){
 			int id = rst.getInt("id");
 			String name = rst.getString("name");
 			double salary = rst.getDouble("salary");
 			int age = rst.getInt("age");
-			out.println("<tr><td>"+id+"</td><td>"+name+"</td><td>"+salary+"</td><td>"+age+"</td></tr>");
+			out.println("<tr><td>"+id+"</td><td>"+name+"</td><td>"+salary+"</td><td>"+age+"</td><td><a href='del?id="+id+"'>删除</a></td></tr>");
 		}
 		out.println("</table><br/><br/>");
 		out.println("<a href='addEmp.html'>添加员工</a>");
