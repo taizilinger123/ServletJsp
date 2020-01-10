@@ -8,4 +8,10 @@ EMS
          地址)，浏览器收到之后，会立即向重定向地址发请求。
   (2)如何重定向
      response.sendRedirect(String url);
-     注：url就是重定向地址。
+     注：a.url就是重定向地址。
+         b.重定向之前，容器会先清空response对象中保存的数据。
+         JS:out.println("")
+            setTimeout(function(){location='list';},2000);
+  (3)特点
+         a.重定向地址是任意的。
+         b.重定向之后，浏览器地址栏的地址会发生改变。
