@@ -34,7 +34,7 @@ public class ListEmpServlet extends HttpServlet{
 			String name = rst.getString("name");
 			double salary = rst.getDouble("salary");
 			int age = rst.getInt("age");
-			out.println("<tr><td>"+id+"</td><td>"+name+"</td><td>"+salary+"</td><td>"+age+"</td><td><a href='del?id="+id+"'>删除</a></td></tr>");
+			out.println("<tr><td>"+id+"</td><td>"+name+"</td><td>"+salary+"</td><td>"+age+"</td><td><a href='del?id="+id+"'>删除</a>&nbsp;&nbsp;<a href='load?id="+id+"'>修改</a></td></tr>");
 		}
 		out.println("</table><br/><br/>");
 		out.println("<a href='addEmp.html'>添加员工</a>");
