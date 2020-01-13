@@ -17,11 +17,26 @@ public class SomeServlet extends HttpServlet {
 	public void init() throws ServletException {
 		System.out.println("someServlet's init...");
 	}
-
-	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-		System.out.println("someServlet's service...");	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+	    doGet(request, response);	     
+	}
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+		System.out.println("someServlet's doGet...");	
 		ServletConfig config = getServletConfig();
 		String company = config.getInitParameter("company");
 		System.out.println(company);
 	}
+
+	@Override
+	public void destroy() {
+       System.out.println("someServlet's destroy...");
+	}
+
+//	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+//		System.out.println("someServlet's service...");	
+//		ServletConfig config = getServletConfig();
+//		String company = config.getInitParameter("company");
+//		System.out.println(company);
+//	}
+	
 }

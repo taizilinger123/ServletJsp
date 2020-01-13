@@ -34,8 +34,17 @@
            step2,读取
              String ServletConfig.getInitParameter(String paramName);
      3)就绪    
+         a.什么是就绪
+            容器调用servlet对象的service方法来处理请求。
+         b.HttpServlet的service方法是如何实现的
+            依据请求类型(get/post)调用对应的doXXX方法(doGet/doPost)。
+            注：我们可以写一个servlet,继承HttpServlet,然后override doGet和doPost或者也可以
+            直接override service方法。
      
      4)销毁
+        a.什么是销毁
+           容器在删除servlet对象之前，会先调用该对象的destroy方法。
+        b.该方法只会执行一次。
      
   (3)相关的几个类与接口
      1)Servlet接口
@@ -46,3 +55,8 @@
           实现了Servlet接口中的部分方法(init,destroy) 
      3)HttpServlet抽象类
           继承GenericServlet抽象类,实现了service方法。
+ 3.容器如何处理请求资源路径
+    比如，在浏览器地址栏输入http://ip:port/web04-3/abc.html
+    step1,容器依据应用名("/web04-3")找到应用所在的文件夹。
+    step2,容器默认为调用的是一个servlet,去web.xml查找有没有一个和"/abc.html"匹配的servlet。
+    
