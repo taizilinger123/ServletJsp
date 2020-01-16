@@ -77,3 +77,31 @@
  快速创建servlet下面是模板:   
  web04-3->src右键->New->Servlet
  Window->Open Perspective->MyEclipse Java Enterprise
+ 
+1.让一个servlet处理多种请求
+   step1,后缀匹配
+   比如
+	   <servlet-mapping>
+	      <servlet-name>ActionServlet</servlet-name>
+	      <url-pattern>*.do</url-pattern>
+	  </servlet-mapping>
+  step2,分析请求资源路径
+  
+2.jsp
+   (1)jsp是什么？
+      sun公司制订的一种服务器端动态页面技术规范。(jetty weblogic jboss)
+      注:
+      a.虽然servlet也可以生成动态页面，但是过于繁琐(out.println),并且很难维护(比如要修改页面就得
+      修改java代码),所以,sun才制订了jsp规范。
+      b.jsp是一个以.jsp为后缀的文件，容器会将这个文件转换成一个对应的servlet然后执行。
+   (2)如何写一个jsp?
+      step1,写一个以.jsp为后缀的文件。
+      step2,在该文件里面，可以添加如下内容:
+            1)html(css,js)  直接写即可。
+            2)java代码 
+              a.java代码片断
+                <% java语句 %> 
+         
+   
+      
+   
