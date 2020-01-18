@@ -38,6 +38,7 @@
                          <%@page import="java.util.*,java.text.*"%>
                         contentType属性:设置response.setContentType方法的参数值,比如
                         <%@page contentType="text/html;charset=utf-8"%>
+                        pageEncoding属性：告诉容器，在读取jsp文件的内容时，使用指定的字符集来解码。
    (3)jsp是如何运行的？
       step1,容器要将jsp转换成一个servlet
             html(css,js)---->service方法当中，使用out.write输出。
