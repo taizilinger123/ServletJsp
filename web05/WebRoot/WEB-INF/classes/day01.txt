@@ -7,6 +7,8 @@
 	  </servlet-mapping>
   step2,分析请求资源路径
   http://localhost:8080/web05/hello.jsp
+  http://localhost:8080/web05/listEmp.jsp
+  http://localhost:8080/web05/listEmp2.jsp
 2.jsp
    (1)jsp是什么？
       sun公司制订的一种服务器端动态页面技术规范。(jetty weblogic jboss)
