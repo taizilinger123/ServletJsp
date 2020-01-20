@@ -34,3 +34,6 @@ http://localhost:8080/web06/list.do
           RequestDispatcher rd = request.getRequestDispatcher(String uri);
      step3,转发
            rd.forward(request, response);
+  (3)特点
+     a.转发之后，浏览器地址栏的地址不变。
+     b.转发的目的地必须是同一个应用。
