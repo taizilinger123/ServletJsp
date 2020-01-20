@@ -18,3 +18,19 @@
      3)就绪
      4)销毁
   (3)相关的几个类与接口 
+http://localhost:8080/web06/list.do
+1.转发
+  (1)什么是转发？
+     一个web组件将未完成的处理转交给另外一个web组件继续做。
+     比较常见的情况是一个servlet将处理结果转交给一个jsp来展现。
+     注：a.web组件指的是jsp或者servlet
+  (2)如何转发
+     step1,绑定数据到request。
+          request.setAttribute(String name,Object obj);
+          绑定名称  绑定值 null
+          HashMap
+          Object request.getAttribute(String name);
+     step2,获得转发器
+          RequestDispatcher rd = request.getRequestDispatcher(String uri);
+     step3,转发
+           rd.forward(request, response);

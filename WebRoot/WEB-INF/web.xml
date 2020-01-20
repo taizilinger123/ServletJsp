@@ -5,43 +5,11 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <servlet>
-     <servlet-name>addEmpServlet</servlet-name>
-     <servlet-class>web.AddEmpServlet</servlet-class>
-  </servlet>
-  <servlet>
-     <servlet-name>listEmpServlet</servlet-name>
-     <servlet-class>web.ListEmpServlet</servlet-class>
-  </servlet>
-  <servlet>
-     <servlet-name>delEmpServlet</servlet-name>
-     <servlet-class>web.DelEmpServlet</servlet-class>
-  </servlet>
-  <servlet>
-     <servlet-name>loadEmpServlet</servlet-name>
-     <servlet-class>web.LoadEmpServlet</servlet-class>
-  </servlet>
-  <servlet>
-     <servlet-name>modifyEmpServlet</servlet-name>
-     <servlet-class>web.ModifyEmpServlet</servlet-class>
+    <servlet-name>ActionServlet</servlet-name>
+    <servlet-class>web.ActionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-     <servlet-name>addEmpServlet</servlet-name>
-     <url-pattern>/add</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-     <servlet-name>listEmpServlet</servlet-name>
-     <url-pattern>/list</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-     <servlet-name>delEmpServlet</servlet-name>
-     <url-pattern>/del</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-     <servlet-name>loadEmpServlet</servlet-name>
-     <url-pattern>/load</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-     <servlet-name>modifyEmpServlet</servlet-name>
-     <url-pattern>/modify</url-pattern>
+    <servlet-name>ActionServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 </web-app>
