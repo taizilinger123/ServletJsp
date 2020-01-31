@@ -13,7 +13,7 @@
 				<div id="header">
 						<div id="rightheader">
 							<p>
-							    2020/1/20
+							    2020/1/30
 								<br />
 							</p>
 						</div>
@@ -68,9 +68,9 @@
 								<%=e.getAge()%>
 							</td>
 							<td>
-								<a href="del.do?id=<%=e.getId()%>" 
-								onclick="return confirm('是否确定删除<%=e.getName()%>');">删除</a>
-								&nbsp;<a href="load.do?id=<%=e.getId()%>">修改</a>
+								<a href="del.do?id=<%=e.getId()%>"
+								 onclick="return confirm('确定删除<%=e.getName()%>吗?');">删除</a>&nbsp;
+								<a href="load.do?id=<%=e.getId()%>">修改</a>
 							</td>
 						</tr>	
 							<%

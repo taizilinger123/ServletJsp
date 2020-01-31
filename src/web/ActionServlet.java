@@ -64,59 +64,48 @@ public class ActionServlet extends HttpServlet {
        }else if("/del".equals(action)){
            //读取要删除的员工的id
     	   int id = Integer.parseInt(request.getParameter("id"));
-    	   //删除指定id的记录
-    	   Connection conn = null;
-    	   PreparedStatement prep = null;
+    	   //删除指定id的记录   	
     	   try {
-    		Class.forName("com.mysql.jdbc.Driver");
-    		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jsd1507db","root","123456");
-    	    prep = conn.prepareStatement("DELETE FROM emp WHERE id=?");
-    	    prep.setInt(1, id);
-    	    prep.executeUpdate();
-    	    //重定向到员工列表
-    	    response.sendRedirect("list.do");
+   			    EmployeeDAO dao = new EmployeeDAO();
+   			    dao.delete(id);
+    	        response.sendRedirect("list.do");
     	   } catch (Exception e) {
     		   e.printStackTrace();
     		   out.println("系统繁忙，请稍后重试");
-    	   }finally{
-    			if(conn != null){
-    				try {
-    					conn.close();
-    				} catch (SQLException e) {
-    					e.printStackTrace();				
-    				}
-    			}		
-    		}
+    	   }
        }else if("/load".equals(action)){
+    	    //读取要修改的员工的id
     	   int id = Integer.parseInt(request.getParameter("id"));
-    		String name = request.getParameter("name");
-    		String salary = request.getParameter("salary");
-    		String age = request.getParameter("age");
-    	   Connection conn = null;
+    	   //查询出对应id的员工的信息
     	   try {
-    		Class.forName("com.mysql.jdbc.Driver");
-    		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jsd1507db","root","123456");
-    		PreparedStatement stat = conn.prepareStatement("UPDATE emp SET name=?,salary=?,age=? WHERE id=?");
-    		stat.setString(1, name);
-    		stat.setDouble(2, Double.parseDouble(salary));
-    		stat.setInt(3, Integer.parseInt(age));
-    		stat.setInt(4, id);
-    		stat.executeUpdate();
-    		response.sendRedirect("list.do");
-    	} catch (Exception e) {
-    		e.printStackTrace();
-    		out.println("系统繁忙，请稍后重试");
-    	}finally{
-    		if(conn != null){
-    			try {
-    				conn.close();
-    			} catch (SQLException e) {
-    				e.printStackTrace();
-    			}
-    		 }		
-    	  }
+  			    EmployeeDAO dao = new EmployeeDAO();
+  			    Employee e = dao.findById(id);
+    	    //依据查询到的员工信息生成一个修改页面
+    	    request.setAttribute("e", e);
+    	    RequestDispatcher rd = request.getRequestDispatcher("updateEmp.jsp");
+    	    rd.forward(request, response);
+    	   } catch (Exception e) {
+    		   e.printStackTrace();
+    		   out.println("系统繁忙，请稍后重试");
+          }
+       }else if("/modify".equals(action)){
+    	    int id = Integer.parseInt(request.getParameter("id"));
+	   		String name = request.getParameter("name");
+	   		String salary = request.getParameter("salary");
+	   		String age = request.getParameter("age");
+   	        try {
+    			EmployeeDAO dao = new EmployeeDAO();
+    			Employee e = new Employee();
+    			e.setId(id);
+    			e.setName(name);
+    			e.setSalary(Double.parseDouble(salary));
+    			e.setAge(Integer.parseInt(age));
+    			dao.modify(e);
+   		        response.sendRedirect("list.do");
+		   	} catch (Exception e) {
+		   		e.printStackTrace();
+		   		out.println("系统繁忙，请稍后重试");
+		   	}
        }
-
 	}
-
 }
