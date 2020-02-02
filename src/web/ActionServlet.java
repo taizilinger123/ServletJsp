@@ -22,6 +22,8 @@ public class ActionServlet extends HttpServlet {
 	
 	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+	   String ip = request.getRemoteAddr();
+	   System.out.println(ip);
 	   request.setCharacterEncoding("utf-8");
        String uri = request.getRequestURI();
        String action = uri.substring(uri.lastIndexOf("/"), uri.lastIndexOf("."));
