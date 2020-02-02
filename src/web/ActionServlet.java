@@ -23,8 +23,6 @@ public class ActionServlet extends HttpServlet {
 	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	   request.setCharacterEncoding("utf-8");
- 	   response.setContentType("text/html;charset=utf-8");
-	   PrintWriter out = response.getWriter();
        String uri = request.getRequestURI();
        String action = uri.substring(uri.lastIndexOf("/"), uri.lastIndexOf("."));
        if("/list".equals(action)){
@@ -39,7 +37,11 @@ public class ActionServlet extends HttpServlet {
     		rd.forward(request, response);
     	   }catch(Exception e){
     		   e.printStackTrace();
-    		   out.println("系统繁忙，稍后重试");
+    		   //转发到异常处理页面
+//    		   request.setAttribute("msg","系统出错，请联系管理员");
+//    		   request.getRequestDispatcher("error.jsp").forward(request, response);
+    		   //交给容器来处理
+    		   throw new ServletException(e);
     	   }	
        }else if("/add".equals(action)){ 	  
     	   String name = request.getParameter("name");
@@ -59,7 +61,7 @@ public class ActionServlet extends HttpServlet {
     			response.sendRedirect("list.do");
     	} catch (Exception e) {
     			e.printStackTrace();
-    			out.println("系统繁忙，请稍后重试");
+    			throw new ServletException(e);
     	 }
        }else if("/del".equals(action)){
            //读取要删除的员工的id
@@ -71,7 +73,7 @@ public class ActionServlet extends HttpServlet {
     	        response.sendRedirect("list.do");
     	   } catch (Exception e) {
     		   e.printStackTrace();
-    		   out.println("系统繁忙，请稍后重试");
+    		   throw new ServletException(e);
     	   }
        }else if("/load".equals(action)){
     	    //读取要修改的员工的id
@@ -86,7 +88,7 @@ public class ActionServlet extends HttpServlet {
     	    rd.forward(request, response);
     	   } catch (Exception e) {
     		   e.printStackTrace();
-    		   out.println("系统繁忙，请稍后重试");
+    		   throw new ServletException(e);
           }
        }else if("/modify".equals(action)){
     	    int id = Integer.parseInt(request.getParameter("id"));
@@ -104,7 +106,7 @@ public class ActionServlet extends HttpServlet {
    		        response.sendRedirect("list.do");
 		   	} catch (Exception e) {
 		   		e.printStackTrace();
-		   		out.println("系统繁忙，请稍后重试");
+		   		throw new ServletException(e);
 		   	}
        }
 	}
