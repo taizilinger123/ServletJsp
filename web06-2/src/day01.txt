@@ -1,0 +1,72 @@
+1.mysql处理中文需要注意的问题
+       mysql的某些驱动，默认会使用"iso-8859-1"来编码,
+       对于中文，就会发生乱码。
+       解决方式:
+             jdbc:mysql://localhost:3306/jsd1507db?useUnicode=true&characterEncoding=utf8
+
+2.servlet的生命周期
+  (1)什么是servlet的生命周期
+     容器如何去创建servlet对象，如何对其进行初始化处理，
+     如何调用其方法来处理请求，以及如何销毁该对象的整个过程。
+  (2)分成哪几个阶段
+     1)实例化
+       a.什么是实例化？
+         容器调用servlet的构造器，创建相应的对象。
+       b.什么时候实例化？
+         情况1：容器收到请求之后。
+     2)初始化
+     3)就绪
+     4)销毁
+  (3)相关的几个类与接口 
+http://localhost:8080/web06/list.do
+1.转发
+  (1)什么是转发？
+     一个web组件将未完成的处理转交给另外一个web组件继续做。
+     比较常见的情况是一个servlet将处理结果转交给一个jsp来展现。
+     注：a.web组件指的是jsp或者servlet
+  (2)如何转发
+     step1,绑定数据到request。
+          request.setAttribute(String name,Object obj);
+          绑定名称  绑定值 null
+          HashMap
+          Object request.getAttribute(String name);
+     step2,获得转发器
+          RequestDispatcher rd = request.getRequestDispatcher(String uri);
+     step3,转发
+           rd.forward(request, response);
+  (3)特点
+     a.转发之后，浏览器地址栏的地址不变。
+     b.转发的目的地必须是同一个应用。
+     
+2.处理servlet运行时产生的异常
+   (1)转发到一个异常处理页面
+      step1,绑定异常提示信息到request
+      step2,转发到一个异常处理页面
+      step3,编写异常处理页面
+   (2)交给容器来处理
+      step1,将异常抛出，比如
+           throw new ServletException(e)
+      step2,配置异常处理页面
+           <error-page>
+      step3,编写异常处理页面
+      通常，系统异常交给容器来处理比较方便，
+      应用异常一般使用转发来处理。
+
+3.路径问题
+  链接，表单提交，重定向，转发
+  <a href="del.do"></a>
+  <form action="add.do">
+  response.sendRedirect("list.do")
+  request.getRequestDispatcher("listEmp.jsp")
+  (1)相对路径
+     不以"/"开头的路径
+  (2)绝对路径  
+     以"/"开头的路径
+  (3)如何写绝对路径
+     链接，表单提交，重定向从应用名开始写，转发从应用名之后开始写。
+     注：不要将应用名直接写在路径里面，而应该使用下面的方法来获得实际部署时的应用名。
+     String request.getContextPath();
+     硬编码 hard coding
+     
+   
+      
