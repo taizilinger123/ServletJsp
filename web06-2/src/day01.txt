@@ -67,6 +67,6 @@ http://localhost:8080/web06/list.do
      注：不要将应用名直接写在路径里面，而应该使用下面的方法来获得实际部署时的应用名。
      String request.getContextPath();
      硬编码 hard coding
-     
+ http://localhost:8080/web06-2/biz02/b3.jsp
    
       
