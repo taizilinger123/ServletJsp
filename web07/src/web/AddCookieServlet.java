@@ -2,6 +2,7 @@ package web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -16,7 +17,7 @@ public class AddCookieServlet extends HttpServlet {
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out = response.getWriter();
             Cookie c = new Cookie("username","king");
-            Cookie c2 = new Cookie("city","bj");
+            Cookie c2 = new Cookie("city",URLEncoder.encode("±±¾©","utf-8"));
             response.addCookie(c);
             response.addCookie(c2);
             out.close();	

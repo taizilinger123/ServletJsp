@@ -2,6 +2,7 @@ package web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -23,7 +24,7 @@ public class FindCookieServlet extends HttpServlet {
 				Cookie c = cookies[i];
 				String name = c.getName();
 				String value = c.getValue();
-				out.println(name +" "+ value+"<br/>");
+				out.println(name +" "+ URLDecoder.decode(value,"utf-8")+"<br/>");
 			}
 		}else{
 			out.println("找不到任何的cookie");
