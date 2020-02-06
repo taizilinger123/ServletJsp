@@ -1,0 +1,21 @@
+1.状态管理
+   (1)什么是状态管理
+      将浏览器与web服务器之间的多次交互作为一个整体来处理，并且将多次交互所涉及的数据(即状态)
+      保存下来。
+   (2)cookie
+      1)什么是cookie?
+        服务器临时保存在浏览器端的少量的数据。
+      2)工作原理
+           当浏览器访问服务器时，服务器可以将少量数据以set-cookie消息头的方式发送给浏览器，浏览器
+           会将这些数据临时保存下来。
+           当浏览器再次访问服务器，会将之前保存的这些数据以cookie消息头的方式发送给服务器。
+      3)添加cookie
+        Cookie c = new Cookie(String name,String value);
+        response.addCookie(c);
+        http://localhost:8888/web07/addCookie     
+        http://localhost:8888/web07/findCookie
+      4)读取cookie
+        Cookie[] request.getCookies();
+        String cookie.getName();
+        String cookie.getValue();
+      
