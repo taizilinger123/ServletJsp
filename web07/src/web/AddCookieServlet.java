@@ -17,6 +17,7 @@ public class AddCookieServlet extends HttpServlet {
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out = response.getWriter();
             Cookie c = new Cookie("username","king");
+            c.setMaxAge(40);
             Cookie c2 = new Cookie("city",URLEncoder.encode("±±¾©","utf-8"));
             response.addCookie(c);
             response.addCookie(c2);

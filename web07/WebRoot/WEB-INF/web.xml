@@ -12,6 +12,11 @@
     <servlet-name>FindCookieServlet</servlet-name>
     <servlet-class>web.FindCookieServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>Find_addCookieServlet</servlet-name>
+    <servlet-class>web.Find_addCookieServlet</servlet-class>
+  </servlet>
+
 
 
   <servlet-mapping>
@@ -21,6 +26,10 @@
   <servlet-mapping>
     <servlet-name>FindCookieServlet</servlet-name>
     <url-pattern>/findCookie</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Find_addCookieServlet</servlet-name>
+    <url-pattern>/find_addCookie</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

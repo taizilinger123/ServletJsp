@@ -35,4 +35,24 @@
         Cookie c = new Cookie("cart","");
         c.setMaxAge(0);
         response.addCookie(c);
+        练习：写一个Find_addCookieServlet,先查看有没有一个名称为"items"的cookie,如果有，则显示
+        该cookie的值，如果没有，则创建之。不考虑编码问题和生存时间问题。
+        http://localhost:8080/web07/find_addCookie
+      7)路径问题
+        a.什么是cookie的路径问题
+           浏览器在向服务器上的某个地址发送请求时，会比较该地址是否符合cookie的路径的要求，只有
+           符合条件的cookie才会被发送出去。
+        b.cookie的默认的路径
+           等于添加该cookie的组件(servlet/jsp)的路径。
+           比如,/web07/biz01/addCookie.jsp添加了一个名称为"cart"的cookie,则该cookie有一个默认的
+           路径("/web07/biz01/")。
+           http://localhost:8080/web07/biz01/addCookie.jsp
+           http://localhost:8080/web07/findCookie1.jsp
+           http://localhost:8080/web07/biz01/findCookie2.jsp 
+           http://localhost:8080/web07/biz01/sub/findCookie3.jsp
+        c.匹配规则
+           请求地址必须等于cookie的路径，或者是其子路径。
+           /web07/findCookie1.jsp  no 
+           /web07/biz01/findCookie2.jsp yes
+           /web07/biz01/findCookie3.jsp yes
       
