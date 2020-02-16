@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UserDAO;
 import entity.User;
@@ -28,6 +29,9 @@ public class ActionServlet extends HttpServlet {
 				User user = dao.findByUsername(username);
 				if(user != null && user.getPwd().equals(pwd)){
 					//有符合条件的记录，则登陆成功
+					//登录成功，将一些数据绑订到session对象上
+					HttpSession session = request.getSession();
+					session.setAttribute("user", user);
 					response.sendRedirect("success.jsp");
 				}else{
 					//登录失败，给用户相应提示

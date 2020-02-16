@@ -14,4 +14,11 @@
         User findByUsername(String username);
   step4,login.jsp,success.jsp
   step5,ActionServlet
-  session验证
+  step6,添加上session验证
+        登陆成功之后，将一些数据绑订到session对象上，比如
+        session.setAttribute("user",user);
+        对于需要保护的资源(比如，success.jsp),添加session验证代码，比如
+        Object obj = session.getAttribute("user");
+        if(obj == null){
+            response.sendRedirect("login.jsp");
+        }
