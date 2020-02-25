@@ -22,3 +22,8 @@
         if(obj == null){
             response.sendRedirect("login.jsp");
         }
+
+2.验证码
+  http://localhost:8080/web08/test2.jsp
+  练习：
+       生成一个长度为5个字符的验证码(这些字符要求从"A-Z,0-9"中选取,1,I,0,O排除)
