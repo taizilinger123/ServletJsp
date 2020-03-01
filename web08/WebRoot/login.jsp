@@ -13,6 +13,16 @@
               <br/>
               密码：<input type="password" name="pwd"/>
               <br/>
+              验证码:<input name="number"/>
+              <%
+                 String msg2 = (String)request.getAttribute("number_error");
+              %>
+              <span style="color:red;">
+              <%=(msg2 == null ? "" : msg2)%>
+              </span>
+              <br/>
+              <img src="checkcode" border="1" onclick="this.src='checkcode?' + Math.random();"/>
+              <br/>
               <input type="submit" value="登录"/>
           </fieldset>
        </form>

@@ -20,8 +20,18 @@ public class ActionServlet extends HttpServlet {
           String uri = request.getRequestURI();
           String action = uri.substring(uri.lastIndexOf("/"),uri.lastIndexOf("."));
           if("/login".equals(action)){
+        	  //先比较验证码是否正确
+        	  String number1 = request.getParameter("number");
+          	  HttpSession session = request.getSession();
+          	  String number2 = (String)session.getAttribute("number");
+          	  if(!number1.equalsIgnoreCase(number2)){
+          		  //验证码错误
+          		  request.setAttribute("number_error","验证码错误");
+          		  request.getRequestDispatcher("login.jsp").forward(request, response);
+          		  return;
+          	  }
         	  //读取用户名和密码
-        	  String username = request.getParameter("username");
+        	  String username = request.getParameter("username");     
         	  String pwd = request.getParameter("pwd");
         	  //依据用户名和密码，查询数据库中是否有对应的记录
         	  UserDAO dao = new UserDAO();
@@ -29,8 +39,7 @@ public class ActionServlet extends HttpServlet {
 				User user = dao.findByUsername(username);
 				if(user != null && user.getPwd().equals(pwd)){
 					//有符合条件的记录，则登陆成功
-					//登录成功，将一些数据绑订到session对象上
-					HttpSession session = request.getSession();
+					//登录成功，将一些数据绑订到session对象上					
 					session.setAttribute("user", user);
 					response.sendRedirect("success.jsp");
 				}else{
