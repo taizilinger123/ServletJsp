@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CommentFilterA implements Filter{
+	private FilterConfig config;
     /**
      * 容器启动后，会立即创建过滤器对象。
      * 只会创建一个。
@@ -40,7 +41,9 @@ public class CommentFilterA implements Filter{
 		String content = request.getParameter("content");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		if(content.indexOf("狗") != -1){
+		//读取初始化参数
+		String illegalStr = config.getInitParameter("illegalStr");
+		if(content.indexOf(illegalStr) != -1){
 			//包含了敏感字
 			out.println("<h1>评论内容包含了敏感字</h1>");
 		}else{
@@ -54,6 +57,8 @@ public class CommentFilterA implements Filter{
      * 该方法只会执行一次。
      */
 	public void init(FilterConfig arg0) throws ServletException {
+		//将容器传递过来的FilterConfig对象保存下来
+		config = arg0;
 		System.out.println("filterA的init方法...");
 	}
 
