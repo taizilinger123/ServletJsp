@@ -4,6 +4,7 @@
    <body style="font-size:30px;">
         这是首页<br/>
         当前系统在线人数是:
-        <%=application.getAttribute("count")%>
+        <%=application.getAttribute("count")%><br/>
+        <a href="logout">退出</a>
    </body>
 </html>

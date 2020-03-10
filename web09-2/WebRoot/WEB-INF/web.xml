@@ -22,6 +22,11 @@
     <servlet-name>B</servlet-name>
     <servlet-class>web.B</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>web.LogoutServlet</servlet-class>
+  </servlet>
+
 
 
   <servlet-mapping>
@@ -31,6 +36,10 @@
   <servlet-mapping>
     <servlet-name>B</servlet-name>
     <url-pattern>/b</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <!-- 首页 -->
   <welcome-file-list>
