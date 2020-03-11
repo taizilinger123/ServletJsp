@@ -31,5 +31,4 @@
             比如：要监听session的创建和销毁，需要实现HttpSessionListener接口。
        step2,在接口方法当中，实现监听处理逻辑。
        step3,配置(web.xml)。
-	   统计在线人数     
-             
+      
