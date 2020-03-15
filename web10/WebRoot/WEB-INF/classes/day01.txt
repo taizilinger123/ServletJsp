@@ -1,5 +1,6 @@
 jsp基础
    1.什么是jsp
+     http://localhost:8080/web10/a2.jsp
      jsp模板->全选a1.jsp->右键->Preferences->MyEclipse->Files and Editors->JSP->JSP Templates->new->myjsp
      G:\apache-tomcat-7.0.6\work\Catalina\localhost\web10\org\apache\jsp\a1_jsp.java可以看到<%!%>和<%@%><%=%>转义过来的源码。
      如何调用jsp基础模板:Window->Customize Perspective->Shortcuts->MyEclipse->Web->把JSP(Advanced Template)前面的勾去掉，勾上后面的
