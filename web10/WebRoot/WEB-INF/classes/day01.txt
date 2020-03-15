@@ -1,0 +1,39 @@
+jsp基础
+   1.什么是jsp
+     jsp模板->全选a1.jsp->右键->Preferences->MyEclipse->Files and Editors->JSP->JSP Templates->new->myjsp
+     G:\apache-tomcat-7.0.6\work\Catalina\localhost\web10\org\apache\jsp\a1_jsp.java可以看到<%!%>和<%@%><%=%>转义过来的源码。
+     如何调用jsp基础模板:Window->Customize Perspective->Shortcuts->MyEclipse->Web->把JSP(Advanced Template)前面的勾去掉，勾上后面的
+     JSP(Basic templates)->Finish->到项目web10->WebRoot右键->New->JSP(Basic templates)->File name:a2->Next->滚动条往上拉找到myjsp->Finish。
+   2.如何写jsp
+     添加：
+     (1)html直接写
+     (2)java代码
+        1)java代码片断
+        <% java代码  %>
+        2)jsp表达式
+        <%= java表达式 %>
+        3)jsp声明(a1.jsp)
+        <%! 声明一个变量或者一个方法 %>
+     (3)指令
+        1)什么是指令
+           通知容器，在将jsp转换成servlet类时，做一些额外的处理，比如导包。
+        2)指令的格式
+           <%@指令名 属性=值 %>
+        3)三个指令
+           a.page指令
+              import属性
+              pageEncoding属性
+              contentType属性
+              session属性(a2.jsp):true(缺省)/false,当值为false时，不能够使用session隐含对象。                
+           b.include指令
+           c.taglib指令
+   3.jsp如何执行的
+     step1,容器要将jsp文件转换成一个servlet类。
+           html(css,js)----->service方法当中，使用out.write输出。
+           <%        %>----->service方法当中，照搬。
+           <%=       %>----->service方法当中，使用out.print输出。
+           <%!       %>----->给servlet增加新的属性或者新的方法。
+     step2,调用该servlet
+   
+      
+        
