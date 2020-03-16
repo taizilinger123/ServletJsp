@@ -37,7 +37,7 @@ public class ActionServlet extends HttpServlet {
     		request.setAttribute("employees",employees);
     		RequestDispatcher rd = request.getRequestDispatcher("listEmp.jsp");
     		rd.forward(request, response);
-    		//response.sendRedirect("listEmp.jsp");
+//    		response.sendRedirect("listEmp.jsp");
     	   }catch(Exception e){
     		   e.printStackTrace();
     		   //转发到异常处理页面
