@@ -25,9 +25,15 @@ jsp基础
               import属性
               pageEncoding属性
               contentType属性
-              session属性(a2.jsp):true(缺省)/false,当值为false时，不能够使用session隐含对象。                
-           b.include指令
+              session属性(a2.jsp):true(缺省)/false,当值为false时，不能够使用session隐含对象。
+              errorPage属性(a3.jsp):指定一个异常处理页面。
+              isErrorPage属性(a4.jsp):true/false(缺省),当值为true时，表示这是一个异常处理页面，
+              可以使用exception隐含对象。                            
+           b.include指令(员工管理empList.jsp)
+              file属性:告诉容器，在将jsp文件转换成servlet类时，将file属性指定的文件的内容插入到
+              该指令所在的位置。
            c.taglib指令
+              用来引入jsp标签。
    3.jsp如何执行的
      step1,容器要将jsp文件转换成一个servlet类。
            html(css,js)----->service方法当中，使用out.write输出。
