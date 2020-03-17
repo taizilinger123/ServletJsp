@@ -34,6 +34,31 @@ jsp基础
               该指令所在的位置。
            c.taglib指令
               用来引入jsp标签。
+        4)隐含对象
+           a.什么是隐含对象
+           b.为什么可以直接使用
+           c.有哪些隐含对象
+             out
+             request
+             response
+             session 
+             application
+             exception 
+             pageContext 
+                 a.容器会为每一个jsp实例创建唯一的一个符合PageContext接口要求的对象。
+                   注：唯一性  一个jsp实例对应一个pageContext
+                       持久性  只要jsp实例没有被销毁，则pageContext就会一直存在。
+                 b.作用(a5.jsp,a6.jsp)
+                     作用1:绑订数据
+                            setAttribute  getAttribute removeAttribute 
+                            注：绑订到pageContext上的数据，只有对应的jsp实例能访问。
+                     作用2:获得其它所有的隐含对象。
+                                    
+             config(a7.jsp)  ServletConfig
+             page  jsp实例本身 
+         5)注释(a8.jsp)
+             a.<!--注释内容--> 如果注释的内容是java代码，则java代码会执行。
+             b.<%--注释内容--%>如果注释的内容是java代码，不会执行。
    3.jsp如何执行的
      step1,容器要将jsp文件转换成一个servlet类。
            html(css,js)----->service方法当中，使用out.write输出。
