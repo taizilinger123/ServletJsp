@@ -8,6 +8,7 @@
           User user = new User();
           user.setName("谢玉");
           user.setGender("m");
+          user.setAge(22);
           request.setAttribute("user",user);
        %>
        姓名:${user.name}<br/>
@@ -15,6 +16,12 @@
                <c:when test="${user.gender == 'm'}">男</c:when>
                <c:when test="${user.gender == 'f'}">女</c:when>
                <c:otherwise>保密</c:otherwise>
+            </c:choose>
+            <br/>
+       年龄:<c:choose>
+               <c:when test="${user.age < 18}">未成年</c:when>
+               <c:when test="${user.age >= 18 && user.age < 60}">成年</c:when>
+               <c:otherwise>老年</c:otherwise>
             </c:choose>
    </body>
 </html>

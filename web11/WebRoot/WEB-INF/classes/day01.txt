@@ -35,6 +35,20 @@
             }else if(){
             }else{
             }
+         3)forEach
+            <c:forEach items="" var="" varStatus=""> 
+            </c:forEach>
+            用来遍历集合或者数组。
+            items属性用来指定要遍历的集合或者数组，可以使用el表达式。
+            var属性：用来指定一个绑订名，绑订范围固定是pageContext。
+            注：每次从集合或者数组中取一个元素，然后将其绑订到pageContext上，绑订名由var属性来指定。
+            varStatus属性：用来指定一个绑订名，绑订范围固定是pageContext。
+            注：绑定值是一个特殊的对象，该对象提供了一些方法，用来获得当前遍历的状态。
+            getIndex():获得当前被遍历的元素的下标(从0开始)。
+            getCount():获得当前是第几次遍历(从1开始)。
+            http://localhost:8080/web11/list
+            
+            
             
      
      
