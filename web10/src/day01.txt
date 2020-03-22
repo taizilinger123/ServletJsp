@@ -92,7 +92,24 @@ jsp基础
           b.方式二
             ${user["name"]}
               注：b1.[]里面可以出现绑订名。
-          
+                  b2.[]里面可以出现0开始的下标，用于访问数组中的某个元素。
+       2)进行一些简单的运算，运算的结果可以给jsp标签的属性赋值，也可以直接输出(e2.jsp)。
+         a.算术运算 +,-,*,/,%
+           注：+号只能求和。
+         b.关系运算 >,>=,<,<=,==,!=
+         c.逻辑运算 && || !
+         d.empty运算 
+           判断集合是否为空或者是否是一个空字符串。
+       3)读取请求参数值(e3.jsp)
+         a.${param.username}等价于request.getParameter("username");
+         b.${paramValues.city}等价于request.getParameterValues("city");
+         http://localhost:8080/web10/e3.jsp?username=King
+         http://localhost:8080/web10/e3.jsp?city=bj&city=wh
+       练习
+          使用el表达式输出员工的信息。
+           
+         
+           
           
           
    

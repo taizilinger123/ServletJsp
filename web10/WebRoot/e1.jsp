@@ -7,6 +7,7 @@
          User user = new User();
          user.setName("Sally");
          user.setAge(22);
+         user.setInterest(new String[]{"cooking","snooker"});
          request.setAttribute("user",user);
          
          User user2 = new User();
@@ -23,6 +24,13 @@
        name:${sessionScope.user.name}
        <br/>
        方式二:<br/>
-       name:${user["name"]}
+       name:${user["name"]}<br/>
+       <%
+         request.setAttribute("str","age");
+       %>
+        <!-- ${sessionScope.user[requestScope.str]}-->
+        <!-- ${sessionScope.user[sessionScope.str]}--> 
+         ${user[str]}<br/>
+         interest:${user.interest[0]}
    </body>
 </html>

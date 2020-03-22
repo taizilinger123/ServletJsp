@@ -3,7 +3,7 @@ package bean;
 public class User {
 	private String name;
 	private int age;
-
+    private String[] interest;
 	public String getName() {
 		return name;
 	}
@@ -20,4 +20,12 @@ public class User {
 		this.age = age;
 	}
 
+	public String[] getInterest() {
+		return interest;
+	}
+
+	public void setInterest(String[] interest) {
+		this.interest = interest;
+	}
+    
 }
