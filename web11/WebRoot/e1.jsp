@@ -7,11 +7,12 @@
        <%
          User user = new User();
          user.setName("梅长苏");
-         user.setGender("m");
+         user.setGender("f");
          request.setAttribute("user",user);
        %>
        姓名:${user.name}
        <!-- 等价于user.getName -->
-       性别:<c:if test="${user.gender == 'm'}">男</c:if>
+       性别:<c:if test="${user.gender == 'm'}" var="flag" scope="request">男</c:if>
+            <c:if test="${!flag}">女</c:if>
    </body>
 </html>

@@ -12,10 +12,29 @@
             注：命名空间(namespace)是为了区分同名元素而设置的一个字符串。
      (3)jstl几个核心的标签
         1)if
-            <c:if test="">
+            <c:if test="" var="" scope="">
                 标签体
             </c:if>
-            当test属性值为true时，容器会执行标签体的内容。test属性可以使用el表达式来计算。
+            当test属性值为true时，容器会执行标签体的内容。
+            test属性可以使用el表达式来计算。
+            var属性：指定一个绑订名称。
+            scope属性：指定绑订的范围，值可以是(page,request,session,application)。
+            if(){
+            }
+        2)choose
+            <c:choose>
+                <c:when test="">
+                </c:when>
+                <c:otherwise>
+                </c:otherwise>
+            </c:choose>
+            when可以出现1次或者多次，表示一个分支，当test属性值为true时,会执行该分支。
+            otherwise可以出现0次或者1次，表示例外。
+            if(){
+            }else if(){
+            }else if(){
+            }else{
+            }
             
      
      
