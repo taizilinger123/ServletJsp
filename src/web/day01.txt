@@ -64,6 +64,10 @@ http://localhost:8080/web06/list.do
      以"/"开头的路径
   (3)如何写绝对路径
      链接，表单提交，重定向从应用名开始写，转发从应用名之后开始写。
+练习：
+   将员工管理中的listEmp.jsp和updateEmp.jsp中的java代码除掉。
+   提示：使用el表达式和jstl标签。
+   
      
    
       

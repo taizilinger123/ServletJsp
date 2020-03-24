@@ -1,5 +1,4 @@
 <%@page pageEncoding="utf-8" contentType="text/html;charset=utf-8"%>
-<%@page import="entity.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -32,9 +31,6 @@
 					<h1>
 						修改员工:
 					</h1>
-					<%
-					   Employee e = (Employee)request.getAttribute("e");
-					%>
 	                <form action="modify.do" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">
@@ -43,7 +39,7 @@
 									id:
 								</td>
 								<td valign="middle" align="left">
-									<%=e.getId()%>
+									${e.id}
 								</td>
 							</tr>
 							<tr>
@@ -51,7 +47,7 @@
 									姓名:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="name" value="<%=e.getName()%>" />
+									<input type="text" class="inputgri" name="name" value="${e.name}" />
 								</td>
 							</tr>
 							<tr>
@@ -59,7 +55,7 @@
 									薪水:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="salary"  value="<%=e.getSalary()%>" />
+									<input type="text" class="inputgri" name="salary"  value="${e.salary}" />
 								</td>
 							</tr>
 							<tr>
@@ -67,11 +63,11 @@
 									年龄:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="age" value="<%=e.getAge()%>" />
+									<input type="text" class="inputgri" name="age" value="${e.age}" />
 								</td>
 							</tr>
 						</table>
-						<input type="hidden" name="id" value="<%=e.getId()%>"/>
+						<input type="hidden" name="id" value="${e.id}"/>
 						<p>
 							<input type="submit" class="button" value="确定" />
 						</p>

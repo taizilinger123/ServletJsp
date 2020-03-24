@@ -2,6 +2,6 @@
 <html>
    <head></head>
    <body style="font-size:30px;color:red;">
-      <%=request.getAttribute("msg")%>
+      ${msg}
    </body>
 </html>
