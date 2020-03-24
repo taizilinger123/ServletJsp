@@ -51,8 +51,11 @@
 练习：
    将员工管理中的listEmp.jsp和updateEmp.jsp中的java代码除掉。
    提示：使用el表达式和jstl标签。
-2.自定义标签
-    step1,写一个java类，继承SimpleTagSupport类。           
+2.自定义标签 简单标签(new)  复杂标签技术(old)
+    step1,写一个java类，继承SimpleTagSupport类。    
+    step2,override do Tag方法，在该方法里面编写处理逻辑。
+    step3,描述标签(.tld文件)。
+           
             
             
             
