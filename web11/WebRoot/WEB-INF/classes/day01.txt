@@ -47,6 +47,12 @@
             getIndex():获得当前被遍历的元素的下标(从0开始)。
             getCount():获得当前是第几次遍历(从1开始)。
             http://localhost:8080/web11/list
+            工程项目上的三角箭头Java Element Filters->Closed projects就可以隐藏关闭的工程了。
+练习：
+   将员工管理中的listEmp.jsp和updateEmp.jsp中的java代码除掉。
+   提示：使用el表达式和jstl标签。
+2.自定义标签
+    step1,写一个java类，继承SimpleTagSupport类。           
             
             
             
