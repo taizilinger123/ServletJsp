@@ -55,7 +55,16 @@
     step1,写一个java类，继承SimpleTagSupport类。    
     step2,override do Tag方法，在该方法里面编写处理逻辑。
     step3,描述标签(.tld文件)。
-           
+         注:
+         a.tld文件要放到WEB-INF\下。
+         b.<body-content>的值可以是
+             empty  没有标签体
+             scriptless 可以有标签体，并且标签体的内容不能够出现java代码(<% %>,<%= %>,<%! %>)
+             JSP        可以有标签体，并且标签体的内容可以出现java代码。但是，只有复杂
+                        标签技术才支持该值，简单标签技术只支持empty和scriptless。
+练习：
+   写一个可以格式化输出当前系统日期的标签date
+   <c1:date pattern="yyyy-MM-dd"/>  
             
             
             

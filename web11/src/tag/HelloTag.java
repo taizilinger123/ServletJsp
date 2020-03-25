@@ -31,7 +31,7 @@ public class HelloTag extends SimpleTagSupport{
 	}
 
 	public void setQty(int qty) {
-		System.out.println("setQty方法..." + msg);
+		System.out.println("setQty方法..." + qty);
 		this.qty = qty;
 	}
 

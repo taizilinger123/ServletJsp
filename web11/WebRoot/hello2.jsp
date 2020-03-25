@@ -3,6 +3,6 @@
 <html>
    <head></head>
    <body style="font-size:30px;">
-       <c1:hello msg="Hello Kitty" qty="100"/>
+       <c1:hello msg="Hello Kitty" qty="${1 + 7}"/>
    </body>
 </html>
