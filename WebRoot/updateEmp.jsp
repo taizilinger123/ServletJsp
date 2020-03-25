@@ -10,21 +10,7 @@
 	<body>
 		<div id="wrap">
 			<div id="top_content">
-				<div id="header">
-						<div id="rightheader">
-							<p>
-							    2020/1/30
-								<br />
-							</p>
-						</div>
-						<div id="topheader">
-							<h1 id="title">
-								<a href="#">Main</a>
-							</h1>
-						</div>
-						<div id="navigation">
-						</div>
-					</div>
+				<%@include file="header.jsp" %>
 				<div id="content">
 					<p id="whereami">
 					</p>
@@ -74,11 +60,7 @@
 					</form>
 				</div>
 			</div>
-			<div id="footer">
-				<div id="footer_bg">
-					ABC@126.com
-				</div>
-			</div>
+			<%@include file="footer.jsp" %>
 		</div>
 	</body>
 </html>
