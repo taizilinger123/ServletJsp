@@ -28,8 +28,19 @@
              xhr.send(null);//发送HTTP请求
       };
   </script>
+  <script type="text/javascript">
+    //检查用户名是否可用
+    function checkname(){
+        //获取请求参数
+        var name = document.getElementById("username").value;
+        //发送ajax请求
+		var xhr = getXhr();//获取XMLHttpRequest对象
+		xhr.open("POST", "/ajax01/check.do");//创建请求
+		xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");//给HTTP协议设置请求头参数
+		xhr.send("name="+name);//发送请求
+    }
+  </script>
   </head>
-  
   <body>
      <a href="#"  onclick="sendRequest()">查看上证指数</a>
      <span id="msg"></span>
@@ -52,5 +63,7 @@
            <td>2015-11-10</td>
         </tr>
      </table>
+     <hr/>
+     <input type="text"  id="username" onblur="checkname()">
   </body>
 </html>

@@ -18,7 +18,8 @@ Ajax技术是一系列技术的综合运用。
 --涉及XML,JSON等数据交互格式
 
 
-
+http://localhost:8080/ajax01/index.jsp#
+http://localhost:8080/ajax01/check.do?name=scott
 XMLHttpRequest属性
   --readyState:0,1,2,3,4
   --responseText:获取服务器返回文本信息
