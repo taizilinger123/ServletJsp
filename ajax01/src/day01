@@ -1,0 +1,25 @@
+1.Ajax简介
+Asynchronous  JavaScript  and  XML 
+异步JavaScript和XML
+Ajax属于客户端和服务器端交互的一项技术
+原有交互模式：(整个页面刷新+请求和响应同步处理)
+浏览器发请求-->Tomcat服务器-->Tomcat将响应信息给浏览器-->JSP-->浏览器显示响应结果
+Ajax交互模式：(局部刷新+异步处理)
+浏览器发请求-->XMLHttpRequest发送-->Tomcat服务器-->Tomcat返回结果-->XMLHttpRequest接收结果-->将结果显示到浏览器页面
+2.Ajax好处
+--具有局部刷新和异步处理特性
+--提高了程序交互效率(传递数据量少)
+--提升用户体验(避免了整个页面频繁刷新)
+3.Ajax技术
+Ajax技术是一系列技术的综合运用。
+--基于JS发请求和响应处理
+--以XMLHttpRequest对象为核心
+--涉及HTML,CSS页面渲染技术
+--涉及XML,JSON等数据交互格式
+
+
+
+XMLHttpRequest属性
+  --readyState:0,1,2,3,4
+  --responseText:获取服务器返回文本信息
+  --responseXML:获取服务器返回的XML信息
