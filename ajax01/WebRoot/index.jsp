@@ -46,6 +46,7 @@
            }
 	    }
 		xhr.send("name="+name);//发送请求
+		document.getElementById("username_msg").innerHTML="正在检测...";
     }
   </script>
   </head>

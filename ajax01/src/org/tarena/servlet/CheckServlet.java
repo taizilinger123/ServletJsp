@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CheckServlet extends HttpServlet{
     public void service(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+      try {
+		Thread.sleep(3000);
+	  } catch (InterruptedException e) {
+		e.printStackTrace();
+	  }
       response.setContentType("text/plain;charset=utf-8");
       PrintWriter out = response.getWriter();
       //接收请求带过来的name值
