@@ -25,3 +25,11 @@ $(this).val();//jquery对象
 
 document,location,window
 document.getElementById("id");
+
+1.触发事件源
+  下拉选择框$("#s1")
+2.触发事件时机
+  onchange选项发生改变
+3.执行什么样操作
+  //提取当前选中的option内容
+  //将内容显示到span中

@@ -23,10 +23,23 @@
           }
        });       
      </script>
+     <script type="text/javascript">
+       //下拉单选项改变事件处理
+       $(function(){
+          $("#s1").change(function(){
+        	  //提取当前选中的option内容
+        	  //var value = $("#s1").val();
+        	  var value = $("#s1 option:selected").text();
+        	  //将内容显示到span中
+        	  $("#name_span").html(value);
+          });
+       });
+     </script>
   </head>
   <body>
    省份:
    <select id="s1">        
    </select>
+   你选择的是：<span id="name_span"></span>
   </body>
 </html>
