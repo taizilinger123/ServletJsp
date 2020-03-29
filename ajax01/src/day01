@@ -16,11 +16,30 @@ Ajax技术是一系列技术的综合运用。
 --以XMLHttpRequest对象为核心
 --涉及HTML,CSS页面渲染技术
 --涉及XML,JSON等数据交互格式
-
+XMLHttpRequest方法：
+  --open("GET|POST",URL);
+  --send();
+  --onreadystatechange 事件
+    readyState改变时触发注册事件
 
 http://localhost:8080/ajax01/index.jsp#
 http://localhost:8080/ajax01/check.do?name=scott
 XMLHttpRequest属性
   --readyState:0,1,2,3,4
+  --status:HTTP响应CODE,例如200,404,500
   --responseText:获取服务器返回文本信息
   --responseXML:获取服务器返回的XML信息
+
+  ==================jQuery==============================
+  $.ajax()-->XMLHttpRequest
+  $.ajax({
+      url:请求地址，
+      type:请求类型post|get,
+      data:提交的数据,
+      async:同步或异步处理true|false,
+      dataType:预期服务器返回结果类型，
+      success:成功回调函数，
+      error:失败回调函数，
+      beforeSend:请求发送前回调函数
+  });
+  
