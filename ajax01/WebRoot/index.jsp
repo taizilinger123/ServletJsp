@@ -37,6 +37,14 @@
 		var xhr = getXhr();//获取XMLHttpRequest对象
 		xhr.open("POST", "/ajax01/check.do");//创建请求
 		xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");//给HTTP协议设置请求头参数
+		//注册回调函数
+		xhr.onreadystatechange = function(){
+		   //如果请求处理完毕
+           if(xhr.readyState==4 && xhr.status==200){
+             var msg = xhr.responseText;
+             document.getElementById("username_msg").innerHTML=msg;
+           }
+	    }
 		xhr.send("name="+name);//发送请求
     }
   </script>
@@ -65,5 +73,6 @@
      </table>
      <hr/>
      <input type="text"  id="username" onblur="checkname()">
+     <span id="username_msg"></span>
   </body>
 </html>
