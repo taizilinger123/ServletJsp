@@ -1,0 +1,27 @@
+1.JSON数据格式
+JavaScript Object Notation 
+JavaScript对象类型格式
+var v = {key1:value1,key2:value2};
+v.key1//访问key1对应的value1
+v.key2//访问key2对应的value2
+
+var v1 = [
+{name:"tom",age:20},
+{name:"scott",age:22}
+]
+//v1[1].name访问JSON对象数组
+var v2 = {name:"tom",
+          books:[
+                 {author:"rose",title:"Java开发"},
+                 {author:"rose",title:"Spring开发"}
+                ]        
+          };
+v2.books[0].title
+for(var i=0;i<v2.books.length;i++){
+  var title = v2.books[i].title;
+}
+
+$(this).val();//jquery对象
+
+document,location,window
+document.getElementById("id");

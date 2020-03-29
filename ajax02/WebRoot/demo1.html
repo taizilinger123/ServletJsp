@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+     <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+     <script type="text/javascript">
+      //v1是一个JSON对象数组
+        var v1 = [
+                   {id:"01",name:"广东"},
+                   {id:"02",name:"河北"},
+                   {id:"03",name:"山东"}                   
+                 ];
+       $(function(){//页面载入完毕执行
+          //解析v1数据，生成option
+          for(var i=0;i<v1.length;i++){
+               var id = v1[i].id;
+               var name = v1[i].name;
+               //拼一个option字符串
+               var s_opt = '<option value="'+id+'">'+name+'</option>';
+               var $opt = $(s_opt);//将字符串转成jQuery对象
+               //将option添加到select中
+               $("#s1").append($opt);
+          }
+       });       
+     </script>
+  </head>
+  <body>
+   省份:
+   <select id="s1">        
+   </select>
+  </body>
+</html>
