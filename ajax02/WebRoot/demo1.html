@@ -32,6 +32,10 @@
         	  var value = $("#s1 option:selected").text();
         	  //将内容显示到span中
         	  $("#name_span").html(value);
+        	  //向ul中添加一个li
+        	  var s_li = "<li>"+value+"</li>";
+        	  var $li = $(s_li);//将字符串转成jQuery对象
+        	  $("#u1").append($li);//将li放到id=u1的<ul>中
           });
        });
      </script>
@@ -41,5 +45,7 @@
    <select id="s1">        
    </select>
    你选择的是：<span id="name_span"></span>
+   <ul id="u1">
+   </ul>
   </body>
 </html>
