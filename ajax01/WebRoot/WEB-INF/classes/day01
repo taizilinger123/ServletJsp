@@ -1,5 +1,5 @@
 1.Ajax简介
-Asynchronous  JavaScript  and  XML 
+Asynchronous  JavaScript  and  XML(JSON) 
 异步JavaScript和XML
 Ajax属于客户端和服务器端交互的一项技术
 原有交互模式：(整个页面刷新+请求和响应同步处理)
@@ -30,6 +30,9 @@ XMLHttpRequest属性
   --responseText:获取服务器返回文本信息
   --responseXML:获取服务器返回的XML信息
 
+$("#id")===document.getElementById("id");
+js-->bootstrap.js-->样式
+js-->ext.js
   ==================jQuery==============================
   $.ajax()-->XMLHttpRequest
   $.ajax({
@@ -42,4 +45,44 @@ XMLHttpRequest属性
       error:失败回调函数，
       beforeSend:请求发送前回调函数
   });
+
+a.选择器
+b.属性操作
+c.事件
+d.文档操作
+
+  var v = {key1:value1,key2:value2};//json对象类型
+  v.key1
+  v.key2
   
+  $.ajax({type:"post"});-->XMLHttpRequest
+  
+  $.get(url,data,callback,type);-->$.getJSON(url,data,callback);
+                                -->$.getScript(url,data,callback);
+  $.post()
+  
+  $("div").load("demo1.do");
+  
+1.JSON数据格式
+JavaScript Object Notation 
+JavaScript对象类型格式
+var v = {key1:value1,key2:value2};
+v.key1//访问key1对应的value1
+v.key2//访问key2对应的value2
+
+var v1 = [
+{name:"tom",age:20},
+{name:"scott",age:22}
+]
+//v1[1].name访问JSON对象数组
+var v2 = {name:"tom",
+          books:[
+                 {author:"rose",title:"Java开发"},
+                 {author:"rose",title:"Spring开发"}
+                ]        
+          };
+v2.books[0].title
+for(var i=0;i<v2.books.length;i++){
+  var title = v2.books[i].title;
+}
+
