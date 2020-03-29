@@ -13,6 +13,7 @@ public class CheckServlet extends HttpServlet{
       response.setContentType("text/plain;charset=utf-8");
       PrintWriter out = response.getWriter();
       //接收请求带过来的name值
+      request.setCharacterEncoding("utf-8");
       String name = request.getParameter("name");
       System.out.println("-------"+name);
       //检测name值是否可用
