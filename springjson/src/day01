@@ -1,0 +1,47 @@
+1.JSON数据格式
+JavaScript Object Notation 
+JavaScript对象类型格式
+var v = {key1:value1,key2:value2};
+v.key1//访问key1对应的value1
+v.key2//访问key2对应的value2
+
+var v1 = [
+{name:"tom",age:20},
+{name:"scott",age:22}
+]
+//v1[1].name访问JSON对象数组
+var v2 = {name:"tom",
+          books:[
+                 {author:"rose",title:"Java开发"},
+                 {author:"rose",title:"Spring开发"}
+                ]        
+          };
+v2.books[0].title
+for(var i=0;i<v2.books.length;i++){
+  var title = v2.books[i].title;
+}
+
+$(this).val();//jquery对象
+
+document,location,window
+document.getElementById("id");
+http://localhost:8080/ajax02/ajax01.do
+1.触发事件源
+  下拉选择框$("#s1")
+2.触发事件时机
+  onchange选项发生改变
+3.执行什么样操作
+  //提取当前选中的option内容
+  //将内容显示到span中
+
+springmvc
+--ioc,webmvc开发包
+--applicationContext.xml
+/ajax01.do 
+-->DispatcherServlet
+-->HandlerMapping-->@RequestMapping
+-->LoadNoteController
+-->调用jackson.jar包将Controller返回结果转成json格式输出
+http://localhost:8080/springjson/ajax01.do
+http://localhost:8080/springjson/ajax02.do
+http://localhost:8080/springjson/ajax03.do
