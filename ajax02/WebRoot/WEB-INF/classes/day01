@@ -25,7 +25,7 @@ $(this).val();//jquery对象
 
 document,location,window
 document.getElementById("id");
-
+http://localhost:8080/ajax02/ajax01.do
 1.触发事件源
   下拉选择框$("#s1")
 2.触发事件时机
