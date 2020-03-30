@@ -33,3 +33,7 @@ http://localhost:8080/ajax02/ajax01.do
 3.执行什么样操作
   //提取当前选中的option内容
   //将内容显示到span中
+
+springmvc
+--ioc,webmvc开发包
+--applicationContext.xml
