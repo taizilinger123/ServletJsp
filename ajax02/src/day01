@@ -37,3 +37,8 @@ http://localhost:8080/ajax02/ajax01.do
 springmvc
 --ioc,webmvc开发包
 --applicationContext.xml
+/ajax01.do 
+-->DispatcherServlet
+-->HandlerMapping-->@RequestMapping
+-->LoadNoteController
+-->调用jackson.jar包将Controller返回结果转成json格式输出
