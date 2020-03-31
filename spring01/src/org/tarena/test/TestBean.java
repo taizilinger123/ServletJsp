@@ -15,7 +15,9 @@ public class TestBean {
 	  ApplicationContext ac = new ClassPathXmlApplicationContext(conf);
 	  //从Spring容器获取c1
 	  Calendar c1 = ac.getBean("c1", Calendar.class);
+	  Calendar c2 = ac.getBean("c2", Calendar.class);
 	  //使用
-	  System.out.println(c1);  
+	  System.out.println("c1="+c1);  
+	  System.out.println("c2="+c2);  
    }
 }
