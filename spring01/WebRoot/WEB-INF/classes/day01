@@ -1,0 +1,28 @@
+1.框架学习
+a.框架有什么作用，能帮我们做什么
+b.帮我做了哪些事，需要我们配合做哪些事
+c.熟悉框架的设计思想，至于如何实现以后再去考虑
+d.练习时多练几遍，掌握开发主要步骤
+spring框架
+1.Spring框架作用
+  a.Spring Core(IOC功能)
+  b.Spring AOP功能
+   (管理组件对象，维护对象关系，目的:降低组件耦合度)
+  c.Spring Web MVC功能
+   (MVC设计,目的：架构一个MVC结构的Web程序)  
+  d.Spring整合其他技术，例如JDBC,MyBatis,Hibernate,Struts等
+Spring-->整合API-->调用原有技术API
+在Spring中使用整合API编程
+Spring-->JdbcTemplate-->Connection,Statement
+JdbcTemplate.update(sql,params);
+请求-->Servlet-->Service-->多个Dao-->JSP
+
+2.SpringIOC应用
+  a.管理对象
+    创建、初始化、释放资源、销毁
+  b.维护对象关系 
+  c.搭建SpringIOC开发环境
+    --引入相关jar包
+	--在src添加applicationContext.xml
+	
+ApplicationContext容器对象-->applicationContext.xml--><bean>	
