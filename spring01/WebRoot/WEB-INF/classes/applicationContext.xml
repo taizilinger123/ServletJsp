@@ -15,4 +15,6 @@
 <bean id="c1" class="java.util.GregorianCalendar"></bean>
 <!-- 采用Calendar.getInstance(),静态工厂方法 -->
 <bean id="c2" class="java.util.Calendar" factory-method="getInstance"></bean>
+<!-- 采用c2.getTime(),对象工厂方法 -->
+<bean id="date" factory-bean="c2"  factory-method="getTime"></bean>
 </beans>

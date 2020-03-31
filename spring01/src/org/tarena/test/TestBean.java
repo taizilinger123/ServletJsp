@@ -1,6 +1,7 @@
 package org.tarena.test;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 import org.springframework.context.ApplicationContext;
@@ -19,5 +20,8 @@ public class TestBean {
 	  //สนำร
 	  System.out.println("c1="+c1);  
 	  System.out.println("c2="+c2);  
+//	  Date date = c2.getTime();
+	  Date date = ac.getBean("date",Date.class);
+	  System.out.println("date="+date);
    }
 }
