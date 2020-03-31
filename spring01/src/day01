@@ -25,4 +25,14 @@ JdbcTemplate.update(sql,params);
     --引入相关jar包
 	--在src添加applicationContext.xml
 	
-ApplicationContext容器对象-->applicationContext.xml--><bean>	
+ApplicationContext容器对象-->applicationContext.xml--><bean>
+
+List-->存取对象的集合
+a.创建List对象
+b.往List添加对象元素
+c.从List取对象元素
+
+Spring 容器-->管理组件及对象关系
+a.创建ApplicationContext对象
+b.向applicationContext.xml配置<bean>
+c.利用ApplicationContext对象getBean()
