@@ -42,5 +42,5 @@
    <property name="p" ref="p2"></property>
 </bean>
 
-
+<bean id="s2" class="org.tarena.bean.Student" autowire="byType"></bean>
 </beans>

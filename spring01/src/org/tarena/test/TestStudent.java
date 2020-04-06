@@ -12,7 +12,7 @@ public class TestStudent {
 	public static void main(String[] args) {
 		String conf = "applicationContext.xml";
 		ApplicationContext ac = new ClassPathXmlApplicationContext(conf);
-		Student s1 = ac.getBean("s1",Student.class);
+		Student s1 = ac.getBean("s2",Student.class);
         s1.show();
 	}
 }
