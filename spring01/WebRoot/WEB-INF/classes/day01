@@ -21,6 +21,9 @@ JdbcTemplate.update(sql,params);
   a.管理对象
     创建、初始化、释放资源、销毁
   b.维护对象关系 
+    采用注入方式建立对象关系
+    Dependency Injection (DI)依赖注入
+    依赖注入：set方法注入，构造器注入
   c.搭建SpringIOC开发环境
     --引入相关jar包
 	--在src添加applicationContext.xml
@@ -58,4 +61,9 @@ d.控制单例对象创建时机
 Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'hd' of bean class [org.tarena.bean.Computer]: Bean property 'hd' is not writable or has an invalid setter method. Did you mean 'hdd'?
 类问题
 Caused by: java.lang.ClassNotFoundException: org.taren.bean.Computer  
-  
+
+IOC概念：
+Inversion of Control控制反转或反向控制
+控制反转：改变了对象获取方式，之前编码方式采用new构造器方式获取对象；ioc中采用由容器创建对象之后注入进来使用。
+只要修改配置就可以改变对象关系。
+

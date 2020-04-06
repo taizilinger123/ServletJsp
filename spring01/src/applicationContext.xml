@@ -35,5 +35,12 @@
    <constructor-arg index="1" value="2G"></constructor-arg>
 </bean>
 
+<bean id="s1" class="org.tarena.bean.Student">
+   <!-- 利用set注入Computer -->
+   <property name="c" ref="p1"></property>
+   <!-- 利用set注入Phone -->
+   <property name="p" ref="p2"></property>
+</bean>
+
 
 </beans>

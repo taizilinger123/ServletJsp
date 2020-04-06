@@ -7,6 +7,7 @@ public class Computer {
 	private String mainbord;
 	//显示配置信息
 	public void show(){
+		System.out.println("--电脑配置--");
 		System.out.println("cpu:"+cpu);
 		System.out.println("hdd:"+hdd);
 		System.out.println("mainbord:"+mainbord);
