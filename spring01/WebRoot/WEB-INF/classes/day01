@@ -36,3 +36,26 @@ Spring 容器-->管理组件及对象关系
 a.创建ApplicationContext对象
 b.向applicationContext.xml配置<bean>
 c.利用ApplicationContext对象getBean()
+
+2.Spring创建Bean对象的控制
+a.控制对象创建方式(使用范围)
+在<bean>元素中使用scope属性控制
+scope可以支持singleton或prototype默认值是singleton
+<bean scope="singleton">该组件在Spring容器里只有一个bean对象
+<bean scope="singleton">该组件每次ac.getBean("id");都返回一个新的对象。
+b.指定对象初始化方法
+利用<bean>元素的init-method指定。当创建对象后自动执行init-method方法。
+c.指定对象销毁方法
+利用<bean>元素的destroy-method指定。
+满足下面条件才有效
+--组件对象为单例模式
+--调用AbstractApplicationContext容器对象的close()方法
+d.控制单例对象创建时机
+  在默认情况下，单例对象是Spring容器创建时实例化；可以使用<bean>元素的lazy-init=true属性将创建时机推迟到
+  getBean()方法调用时。
+
+属性问题
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'hd' of bean class [org.tarena.bean.Computer]: Bean property 'hd' is not writable or has an invalid setter method. Did you mean 'hdd'?
+类问题
+Caused by: java.lang.ClassNotFoundException: org.taren.bean.Computer  
+  

@@ -23,5 +23,6 @@ public class TestBean {
 //	  Date date = c2.getTime();
 	  Date date = ac.getBean("date",Date.class);
 	  System.out.println("date="+date);
+	  
    }
 }
