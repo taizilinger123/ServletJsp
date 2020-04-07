@@ -1,0 +1,16 @@
+1.自动注入
+<bean autowire="">用于指定自动注入规则,可以使用byType,byName,constructor等,用于简化注入配置。
+使用byType类型匹配注入需要注意，有2个及其以上匹配会出异常。
+
+2.各种类型信息的注入配置格式
+  a.注入字符串，数值单个数值
+    <property name="" value="">
+  b.注入bean对象
+  c.注入集合list,set,map,properties
+  d.spring表达式注入
+Caused by: java.lang.NumberFormatException: For input string: "abc"字符串没法转成数值
+
+Properties
+db.properties
+key=value
+key=value
