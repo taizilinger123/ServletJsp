@@ -8,6 +8,20 @@
   b.注入bean对象
   c.注入集合list,set,map,properties
   d.spring表达式注入
+  #{表达式}
+  #{id名.属性}或#{id名.key}
+  如果是对象属性，需要有getXXX方法
+
+<bean id="msg1" class="org.tarena.bean.MessageBean">
+     <property name="name" value="#{someList[0]}"></property>
+     <property name="name" value="#{msg.name}"></property>
+     <property name="name" value="#{dbParams.user}"></property>
+     <property name="friends" ref="someList"></property>
+     <property name="cities" ref="someSet"></property>
+     <property name="books" ref="someMap"></property>
+     <property name="db" ref="dbParams"></property>
+</bean>
+
 Caused by: java.lang.NumberFormatException: For input string: "abc"字符串没法转成数值
 
 Properties

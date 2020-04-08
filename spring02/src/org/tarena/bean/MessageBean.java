@@ -9,6 +9,10 @@ import java.util.Map.Entry;
 
 public class MessageBean {
 	private String name;
+	public String getName() {
+		return name;
+	}
+	
 	private int age;
 	private Date birth;
 	private List<String> friends;

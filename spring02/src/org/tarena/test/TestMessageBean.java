@@ -8,7 +8,7 @@ public class TestMessageBean {
    public static void main(String[] args) {
 		  String conf = "applicationContext.xml";
 		  ApplicationContext ac = new ClassPathXmlApplicationContext(conf);
-		  MessageBean msg = ac.getBean("msg",MessageBean.class);
+		  MessageBean msg = ac.getBean("msg1",MessageBean.class);
 		  msg.show();
    }
 }

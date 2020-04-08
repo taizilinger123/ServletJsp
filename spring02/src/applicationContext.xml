@@ -45,5 +45,39 @@
    </property>
 </bean>
 
+<!-- 定义List<String>对象 -->
+<util:list id="someList">
+    <value>小舒</value>
+    <value>靖王</value>
+</util:list>
+
+<util:set id="someSet">
+    <value>beijing</value>
+    <value>shanghai</value>
+</util:set>
+
+<util:map id="someMap">
+    <entry key="1003" value="Oracle基础"></entry>
+    <entry key="1004" value="Spring开发"></entry>
+</util:map>
+
+<util:properties id="someProps">
+    <prop key="username">#{dbParams.user}</prop>
+    <prop key="password">#{dbParams.password}</prop>
+    <prop key="driver">#{dbParams.driver}</prop>
+</util:properties>
+
+<!-- 读取db.properties文件，形成一个Properties对象-->
+<util:properties id="dbParams" location="classpath:db.properties"></util:properties>
+
+<bean id="msg1" class="org.tarena.bean.MessageBean">
+     <property name="name" value="#{dbParams.user}"></property>
+     <property name="friends" ref="someList"></property>
+     <property name="cities" ref="someSet"></property>
+     <property name="books" ref="someMap"></property>
+     <property name="db" ref="dbParams"></property>
+</bean>
+
+
 
 </beans>
