@@ -16,6 +16,7 @@
      <property name="name" value="#{someList[0]}"></property>
      <property name="name" value="#{msg.name}"></property>
      <property name="name" value="#{dbParams.user}"></property>
+     <property name="name" value="#{dbParams['123']}"></property>
      <property name="friends" ref="someList"></property>
      <property name="cities" ref="someSet"></property>
      <property name="books" ref="someMap"></property>
@@ -28,3 +29,18 @@ Properties
 db.properties
 key=value
 key=value
+3.利用注解配置应用IOC
+  在JDK5.0时追加一些新特性
+  List<String>
+  for(String s : list)
+  Integer i = 10;
+  注解:在类定义，方法定义，成员变量定义前面使用，格式为@注解标记名
+  public void f1(String.. s){}动态接收多个String参数
+  a.组件自动扫描
+    可以按指定的包路径，将包下所有组件扫描，如果发现组件类定义前有以下标记，会将组件扫描到Spring容器。
+    @Component
+    @Controller
+    @Service
+    @Repository
+    @Named(需要引入第三方标准包)
+  b.注入
