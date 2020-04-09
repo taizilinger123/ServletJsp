@@ -1,0 +1,64 @@
+1.自动注入
+<bean autowire="">用于指定自动注入规则,可以使用byType,byName,constructor等,用于简化注入配置。
+使用byType类型匹配注入需要注意，有2个及其以上匹配会出异常。
+
+2.各种类型信息的注入配置格式
+  a.注入字符串，数值单个数值
+    <property name="" value="">
+  b.注入bean对象
+  c.注入集合list,set,map,properties
+  d.spring表达式注入
+  #{表达式}
+  #{id名.属性}或#{id名.key}
+  如果是对象属性，需要有getXXX方法
+
+<bean id="msg1" class="org.tarena.bean.MessageBean">
+     <property name="name" value="#{someList[0]}"></property>
+     <property name="name" value="#{msg.name}"></property>
+     <property name="name" value="#{dbParams.user}"></property>
+     <property name="name" value="#{dbParams['123']}"></property>
+     <property name="friends" ref="someList"></property>
+     <property name="cities" ref="someSet"></property>
+     <property name="books" ref="someMap"></property>
+     <property name="db" ref="dbParams"></property>
+</bean>
+
+Caused by: java.lang.NumberFormatException: For input string: "abc"字符串没法转成数值
+
+Properties
+db.properties
+key=value
+key=value
+3.利用注解配置应用IOC
+  在JDK5.0时追加一些新特性
+  List<String>
+  for(String s : list)
+  Integer i = 10;
+  注解:在类定义，方法定义，成员变量定义前面使用，格式为@注解标记名
+  public void f1(String.. s){}动态接收多个String参数
+  a.组件自动扫描
+    可以按指定的包路径，将包下所有组件扫描，如果发现组件类定义前有以下标记，会将组件扫描到Spring容器.<bean>
+    请求-->DispatcherServlet-->Controller
+    请求-->ActionServlet-->Dao
+    @Component//其他组件
+    @Controller//控制层组件
+    @Service//业务层组件xxxService
+    @Repository//数据访问层组件xxxDao
+    @Named(需要引入第三方标准包)
+    
+    @Scope控制对象创建，默认单例
+    @PostConstruct指定init-method
+    @PreDestroy指定destroy-method
+    
+
+    
+  b.注入注解
+    @Resource:可以在变量定义前或setXX方法前应用
+    @Autowired:可以在变量定义前或setXX方法前应用
+    一般使用时，功能等价，都可以实现注入。
+    如果不存在多个匹配类型，使用@Resource或@Autowired都可以。
+    如果存在多个匹配类型，建议按名称注入
+    @Resource(name="指定名称")或
+    @Autowired
+    @Qualifier("p")组合指定名称使用
+    
