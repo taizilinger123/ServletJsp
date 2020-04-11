@@ -4,14 +4,48 @@
 
 2.各种类型信息的注入配置格式
   a.注入字符串，数值单个数值
-    <property name="" value="">
+    <property name="属性名" value="">
   b.注入bean对象
+    <property name="属性名" ref="">
   c.注入集合list,set,map,properties
+    <property name="属性名">
+        <list></list>
+        <set></set>
+        <map>
+           <entry key="" value=""></entry>
+        </map>
+        <props>
+            <prop key=""></prop>
+        </props>       
+    <property>
+    
+  <util:list id="">
+  <util:set id="">
+  <util:map id="">
+  <util:properties id="">
+  
+  #{bean对象id.属性}-->属性getXXX
+  #{map对象id.key}
+  #{map对象id['key']}
+  #{List对象id[0]}
+  
   d.spring表达式注入
   #{表达式}
   #{id名.属性}或#{id名.key}
   如果是对象属性，需要有getXXX方法
 
+@Resource(name="xxx")//强制按名称
+@Autowired
+@Qulifier("xxx")//强制按名称
+
+@Resource    setXxx
+@Autowired   setXxx(String xx)
+
+<bean autowire="byName">
+使用建议:set注入建议用@Resource构造器建议用Autowired
+
+SpringIOC应用:自己编写的组件建议使用注解配置，框架API只能用XML配置
+                 
 <bean id="msg1" class="org.tarena.bean.MessageBean">
      <property name="name" value="#{someList[0]}"></property>
      <property name="name" value="#{msg.name}"></property>
@@ -61,4 +95,5 @@ key=value
     @Resource(name="指定名称")或
     @Autowired
     @Qualifier("p")组合指定名称使用
+    
     
