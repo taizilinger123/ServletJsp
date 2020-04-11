@@ -5,13 +5,14 @@ import org.springframework.stereotype.Component;
 
 @Component("ds")
 public class MyDataSource {
-	@Value("#{db.username}")
+	//@Value("#{db.key}")//key与applicationContext.xml中的<util:properties>中的key对应
+	@Value("#{db.username}")//将db对象username值注入
 	private String username;
-	@Value("#{db.password}")
+	@Value("#{db.password}")//将db对象password值注入
 	private String password;
-	@Value("#{db.driver}")
+	@Value("#{db.driver}")//将db对象driver值注入
 	private String driver;
-	@Value("#{db.url}")
+	@Value("#{db.url}")//将db对象url值注入
 	private String url;
     
 	//因为有@Value(""),setXxx方法可以省略
