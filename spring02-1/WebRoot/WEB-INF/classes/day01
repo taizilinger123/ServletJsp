@@ -56,6 +56,7 @@ SpringIOC应用:自己编写的组件建议使用注解配置，框架API只能用XML配置
      <property name="books" ref="someMap"></property>
      <property name="db" ref="dbParams"></property>
 </bean>
+faststone画图工具
 
 Caused by: java.lang.NumberFormatException: For input string: "abc"字符串没法转成数值
 
