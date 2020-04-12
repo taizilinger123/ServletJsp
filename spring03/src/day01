@@ -98,5 +98,31 @@ key=value
     @Resource(name="指定名称")或
     @Autowired
     @Qualifier("p")组合指定名称使用
-    
-    
+
+IOC:以注入方式应用对象，实现组件解耦    
+==================Spring Web MVC========================
+Spring Web MVC需要使用IOC功能。
+用于开发MVC结构的Web程序。
+
+1.MVC思想
+  将程序组件分为模型，视图，控制器三部分
+2.Spring如何实现MVC
+*3.Spring Web MVC处理流程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

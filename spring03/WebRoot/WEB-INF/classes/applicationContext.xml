@@ -15,10 +15,13 @@
 <!-- 将MyDataSource扫描到Spring容器 -->
 <context:component-scan base-package="org.tarena"></context:component-scan>
 <!-- Spring创建一个Properties对象，然后利用@Value表达式注入将Properties对象信息给MyDataSource注入-->
+<!--  
 <util:properties id="db">
    <prop key="username">root</prop>
    <prop key="password">1234</prop>
    <prop key="driver">com.mysql.jdbc.Driver</prop>
    <prop key="url">jdbc:mysql:///test</prop>
 </util:properties>
+-->
+<util:properties id="db" location="classpath:mysql.properties"></util:properties>
 </beans>
