@@ -1,0 +1,49 @@
+==================Spring Web MVC========================
+Spring Web MVC需要使用IOC功能。
+用于开发MVC结构的Web程序。
+
+1.MVC思想
+  将程序组件分为模型，视图，控制器三部分
+2.Spring如何实现MVC
+*3.Spring Web MVC处理流程
+/list.do
+-->DispatcherServlet
+-->handlermapping
+-->EmpListController   #要自己写
+   -->EmpDao.findAll() #要自己写
+-->ViewResolver
+   -->emp_list.jsp     #要自己写
+
+案例:hello示例
+/hello.do--springwebmvc-->/WEB-INF/hello.jsp
+
+/hello.do
+-->DispatcherServlet(配置)
+-->HandlerMapping(配置)
+-->HelloController(编写+配置)
+-->ViewResolver(配置)
+-->/WEB-INF/hello.jsp(编写)
+
+a.搭建Spring Web MVC开发环境
+  --引入ioc,webmvc开发包
+  --src下添加applicationContext.xml
+b.编写HelloController实现
+  规则:实现Controller接口
+<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>这个web.xml在
+Referenced Libraries->spring-webmvc-3.2.8.RELEASE.jar->org.springframework.web.servlet->DispatcherServlet.class里
+在applicationContext.xml里
+<bean id="handlermapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+      //class="SimpleUrl+alt+/"就会出现提示
+      //class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"这个包在Referenced Libraries->spring-webmvc-3.2.8.RELEASE.jar下面
+</bean>
+http://localhost:8080/springmvc01/hello.do
+
+
+
+
+
+
+
+
+
+
