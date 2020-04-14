@@ -108,12 +108,28 @@ Spring Web MVC需要使用IOC功能。
   将程序组件分为模型，视图，控制器三部分
 2.Spring如何实现MVC
 *3.Spring Web MVC处理流程
+/list.do
+-->DispatcherServlet
+-->handlermapping
+-->EmpListController   #要自己写
+   -->EmpDao.findAll() #要自己写
+-->ViewResolver
+   -->emp_list.jsp     #要自己写
 
+案例:hello示例
+/hello.do--springwebmvc-->/WEB-INF/hello.jsp
 
+/hello.do
+-->DispatcherServlet
+-->HandlerMapping
+-->HelloController
+-->ViewResolver
+-->/WEB-INF/hello.jsp
 
-
-
-
+a.搭建Spring Web MVC开发环境
+  --引入ioc,webmvc开发包
+  --src下添加applicationContext.xml
+ 
 
 
 
