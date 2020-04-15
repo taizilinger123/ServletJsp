@@ -37,6 +37,14 @@ Referenced Libraries->spring-webmvc-3.2.8.RELEASE.jar->org.springframework.web.s
       //class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"这个包在Referenced Libraries->spring-webmvc-3.2.8.RELEASE.jar下面
 </bean>
 http://localhost:8080/springmvc01/hello.do
+==================================================
+2.显示登录页面
+/tologin.do
+-->DispatcherServlet
+-->Handlermapping
+-->ToLoginController
+-->ViewResolver
+-->/WEB-INF/login.jsp
 
 
 

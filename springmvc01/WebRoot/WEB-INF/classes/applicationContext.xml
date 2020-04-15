@@ -17,11 +17,13 @@
    <property name="mappings">
        <props>
           <prop key="/hello.do">helloController</prop>
+          <prop key="/tologin.do">tologinController</prop>
        </props>
    </property>
 </bean>
 <!-- 配置controller -->
 <bean id="helloController" class="org.tarena.controller.HelloController"></bean>
+<bean id="tologinController" class="org.tarena.controller.ToLoginController"></bean>
 <!-- 配置viewresolver -->
 <bean id="viewresolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/WEB-INF/"></property>
