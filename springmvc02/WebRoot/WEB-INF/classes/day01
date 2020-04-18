@@ -15,7 +15,7 @@ b.Controller±àÐ´ºÍÅäÖÃ
 -->ViewResolver
 -->hello.jsp
 
-
+http://localhost:8080/springmvc02/hello.do
 
 
 
