@@ -46,7 +46,22 @@ http://localhost:8080/springmvc01/hello.do
 -->ViewResolver
 -->/WEB-INF/login.jsp
 
+=============================SpringWebMVC注解应用=================
+a.RequestMappingHandlerMapping组件
+  @RequestMapping("/login.do")
+  该标记用在Controller业务方法前
+b.Controller编写和配置
+  取消了实现Controller接口及方法约定
+  可以允许程序员按需要灵活定义业务方法
+  public ModelAndView或String 方法名(根据需要定义request,session,response)
+  (Controller需要扫描到Spring容器，必须使用@Controller)
 
+/hello.do 
+-->DispatcherServlet
+-->HandlerMapping
+-->HelloController
+-->ViewResolver
+-->hello.jsp
 
 
 
