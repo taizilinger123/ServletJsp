@@ -11,7 +11,7 @@ public class HelloController {
    public ModelAndView execute(){
 	   ModelAndView mav = new ModelAndView();
 	   mav.setViewName("hello");
-	   mav.getModel().put("msg", "×¢½â°æ");
+	   mav.getModel().put("msg", "注解版");
 	   return mav;
    }
 }
