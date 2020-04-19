@@ -36,7 +36,7 @@ http://localhost:8080/springmvc02/tologin.do
 ===================================================
 1.Controller如何接收请求参数
   a.利用HttpServletRequest
-  b.利用业务方法参数
+  *b.利用业务方法参数
     --方法参数名与请求参数key保持一致
     --利用@RequestParam("key")
     
@@ -44,5 +44,7 @@ http://localhost:8080/springmvc02/tologin.do
   public String f1(@RequestParam("username") String name);
   http://localhost:8080/springmvc02/tologin.do
   http://localhost:8080/springmvc02/login1.do?username=scott&password=1234
-  c.利用实体对象当方法参数
+  *c.利用实体对象当方法参数(适用大量参数比较多的情况)
   http://localhost:8080/springmvc02/tologin.do
+  使用建议：少量参数使用b;大量参数使用c,
+  如果客户端表单数据没有格式检查，遇到非字符串类型参数建议使用a.
