@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.tarena.entity.User;
 
 @Controller
 public class LoginController {
@@ -32,5 +33,14 @@ public class LoginController {
 		System.out.println("username:"+name);
 		System.out.println("password:"+password);
 		return "login";//回到登录页面
+	}
+	
+	//测试用实体对象user接收请求参数
+	@RequestMapping("/login2.do")
+	public String checkLogin2(User user){
+		System.out.println("--执行checkLogin2--");
+		System.out.println("username:"+user.getUsername());
+		System.out.println("password:"+user.getPassword());
+		return "login";
 	}
 }

@@ -42,5 +42,7 @@ http://localhost:8080/springmvc02/tologin.do
     
   login.do?username=xxx
   public String f1(@RequestParam("username") String name);
-http://localhost:8080/springmvc02/tologin.do
-http://localhost:8080/springmvc02/login1.do?username=scott&password=1234
+  http://localhost:8080/springmvc02/tologin.do
+  http://localhost:8080/springmvc02/login1.do?username=scott&password=1234
+  c.利用实体对象当方法参数
+  http://localhost:8080/springmvc02/tologin.do
