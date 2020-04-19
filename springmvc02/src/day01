@@ -33,3 +33,14 @@ http://localhost:8080/springmvc02/tologin.do
 -->ViewResolver
 -->错误login.jsp/正确ok.jsp
 http://localhost:8080/springmvc02/tologin.do
+===================================================
+1.Controller如何接收请求参数
+  a.利用HttpServletRequest
+  b.利用业务方法参数
+    --方法参数名与请求参数key保持一致
+    --利用@RequestParam("key")
+    
+  login.do?username=xxx
+  public String f1(@RequestParam("username") String name);
+http://localhost:8080/springmvc02/tologin.do
+http://localhost:8080/springmvc02/login1.do?username=scott&password=1234

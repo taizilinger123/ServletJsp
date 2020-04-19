@@ -3,6 +3,7 @@ package org.tarena.controller;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
@@ -22,5 +23,14 @@ public class LoginController {
 		}else{
 			return "login";//错误进入login.jsp
 		}
+	}
+	
+	//测试使用方法参数接收request信息
+	@RequestMapping("/login1.do")
+	public String checkLogin1(@RequestParam("username")String name,String password){
+		System.out.println("--执行checkLogin1--");
+		System.out.println("username:"+name);
+		System.out.println("password:"+password);
+		return "login";//回到登录页面
 	}
 }
