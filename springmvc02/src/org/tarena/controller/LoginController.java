@@ -2,6 +2,7 @@ package org.tarena.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.tarena.entity.User;
@@ -42,5 +43,16 @@ public class LoginController {
 		System.out.println("username:"+user.getUsername());
 		System.out.println("password:"+user.getPassword());
 		return "login";
+	}
+	
+	@RequestMapping("/login3.do")
+	public String checkLogin3(String username,String password,ModelMap model){
+		if("root".equals(username) && "1234".equals(password)){
+			model.put("user", username);
+			return "ok";//ok.jsp使用${user}
+		}else{
+			model.put("msg", "用户名或密码错误");
+			return "login";//login.jsp使用${msg}
+		}
 	}
 }
