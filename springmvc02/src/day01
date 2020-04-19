@@ -76,3 +76,19 @@ http://localhost:8080/springmvc02/tologin.do
  public String checkLogin(HttpSession session){
     session.setAttribute(key,value);
  } 
+ ==============================================
+ 案例：列表显示功能
+ /list.do
+-->DispatcherServlet
+-->HandlerMapping
+-->ListController(构建一个List<User>,传递到list.jsp)
+-->ViewResolver
+-->/WEB-INF/list.jsp(JSTL <c:foreach>)
+
+List<User> list = new ArrayList();
+for(int i=0;i<10;i++){
+   User user = new User();
+   user.setUsername("tom"+i);
+   user.setPassword("1234"+i);
+   list.add(user);
+}
