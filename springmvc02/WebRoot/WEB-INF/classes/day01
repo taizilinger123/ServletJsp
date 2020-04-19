@@ -17,8 +17,19 @@ b.Controller编写和配置
 
 http://localhost:8080/springmvc02/hello.do
 
+//登入登录页面
+/tologin.do
+-->DispatcherServlet
+-->HandlerMapping
+-->LoginController.toLogin
+-->ViewResolver
+-->login.jsp
+http://localhost:8080/springmvc02/tologin.do
 
-
-
-
-
+/login.do
+-->DispatcherServlet
+-->HandlerMapping
+-->LoginController.checkLogin
+-->ViewResolver
+-->错误login.jsp/正确ok.jsp
+http://localhost:8080/springmvc02/tologin.do
