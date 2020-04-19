@@ -5,5 +5,6 @@
   
   <body>
     <h2>${user }登录成功</h2>
+    session内容:${sessionScope.username }
   </body>
 </html>

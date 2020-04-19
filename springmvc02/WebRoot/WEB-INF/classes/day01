@@ -66,3 +66,13 @@ http://localhost:8080/springmvc02/tologin.do
   等价于下面
   model.put("put",getName());//${user}
   
+ 3.Controller如何使用Session
+ 
+ public String checkLogin(HttpServletRequest request){
+    HttpSession session = request.getSession();
+    session.setAttribute(key,value);
+ }
+  
+ public String checkLogin(HttpSession session){
+    session.setAttribute(key,value);
+ } 

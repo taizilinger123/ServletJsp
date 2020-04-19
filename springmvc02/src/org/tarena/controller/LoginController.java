@@ -1,6 +1,8 @@
 package org.tarena.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,7 @@ public class LoginController {
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
 		if("root".equals(name) && "1234".equals(password)){
+			request.getSession().setAttribute("username", name);
 			return "ok";//正确进入ok.jsp
 		}else{
 			return "login";//错误进入login.jsp
@@ -46,9 +49,10 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/login3.do")
-	public String checkLogin3(String username,String password,ModelMap model){
+	public String checkLogin3(String username,String password,ModelMap model,HttpSession session){
 		if("root".equals(username) && "1234".equals(password)){
 			model.put("user", username);
+			session.setAttribute("username", username);
 			return "ok";//ok.jsp使用${user}
 		}else{
 			model.put("msg", "用户名或密码错误");
