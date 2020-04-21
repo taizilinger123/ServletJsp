@@ -92,3 +92,34 @@ for(int i=0;i<10;i++){
    user.setPassword("1234"+i);
    list.add(user);
 }
+================================================
+1.SpringMVC工作流程
+  a.浏览器发出一个HTTP请求
+  b.请求首先进入DispatcherServlet主控制器
+  c.主控制器调用HandlerMapping组件根据请求找映射的Controller处理
+  d.执行Controller处理方法，将返回结果给ViewResolver组件
+  e.ViewResolver组件根据Controller返回结果定位视图JSP,将模型数据传递给JSP
+  f.由JSP生成响应结果，给浏览器输出
+
+2.SpringMVC开发过程(应用)
+  a.搭建SpringMVC开发环境
+  b.流程设计
+    请求(变化)
+    -->DispatcherServlet(固定)
+    -->HandlerMapping(固定)
+    -->Controller组件(变化)
+    -->ViewResolver(固定)
+    -->JSP组件(变化)
+  c.编写JSP,Controller组件
+  d.配置处理流程    
+    
+3.如何接收请求参数(应用)
+    方法参数(参数名字与请求key保持一致)
+    方法参数(实体对象，实体属性与key保持一致)
+  如何向页面传值
+    添加ModelMap方法参数
+  如何使用session
+    添加HttpSession方法参数
+  
+   
+
