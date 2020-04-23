@@ -121,5 +121,21 @@ for(int i=0;i<10;i++){
   如何使用session
     添加HttpSession方法参数
   
-   
+=================================================
+/list.do-->Filter
+-->DispatcherServlet
+-->HandlerMapping   
+-->ListController
+-->ViewResolver
+-->/WEB-INF/list.jsp
+================================================
+4.如何解决中文接收乱码问题
+5.如何处理异常
+6.如何实现登录权限检查
+
+request.setCharacterEncoding("utf8");
+request.getParameter("username");
+中文
+请求提交数据-->Controller-->Dao-->Db(乱码)
+jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
 

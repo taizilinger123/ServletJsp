@@ -19,6 +19,15 @@
     <url-pattern>*.do</url-pattern>
 </servlet-mapping>
 
+<filter>
+     <filter-name>myfilter</filter-name>
+     <filter-class>org.tarena.filter.MyFilter</filter-class>
+</filter>
+<filter-mapping>
+     <filter-name>myfilter</filter-name>
+     <url-pattern>*.do</url-pattern>
+</filter-mapping>
+
 
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

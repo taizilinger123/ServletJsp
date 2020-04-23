@@ -19,6 +19,7 @@ public class LoginController {
 	//登录按钮处理
 	@RequestMapping("/login.do")
 	public String checkLogin(HttpServletRequest request){
+		request.setCharacterEncoding("utf-8");
 		//获取请求信息
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -50,6 +51,9 @@ public class LoginController {
 	
 	@RequestMapping("/login3.do")
 	public String checkLogin3(String username,String password,ModelMap model,HttpSession session){
+		System.out.println("--执行checkLogin3--");
+		System.out.println("username"+username);
+		System.out.println("password"+password);
 		if("root".equals(username) && "1234".equals(password)){
 			model.put("user", username);
 			session.setAttribute("username", username);
