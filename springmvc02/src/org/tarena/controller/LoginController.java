@@ -19,7 +19,6 @@ public class LoginController {
 	//登录按钮处理
 	@RequestMapping("/login.do")
 	public String checkLogin(HttpServletRequest request){
-		request.setCharacterEncoding("utf-8");
 		//获取请求信息
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
