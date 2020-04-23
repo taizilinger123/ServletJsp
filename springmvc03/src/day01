@@ -1,0 +1,156 @@
+=============================SpringWebMVC注解应用=================
+a.RequestMappingHandlerMapping组件
+  @RequestMapping("/login.do")
+  该标记用在Controller业务方法前
+b.Controller编写和配置
+  取消了实现Controller接口及方法约定
+  可以允许程序员按需要灵活定义业务方法
+  public ModelAndView或String 方法名(根据需要定义request,session,response)
+  (Controller需要扫描到Spring容器，必须使用@Controller)
+
+/hello.do 
+-->DispatcherServlet
+-->HandlerMapping
+-->HelloController
+-->ViewResolver
+-->hello.jsp
+
+http://localhost:8080/springmvc02/hello.do
+
+//登入登录页面
+/tologin.do
+-->DispatcherServlet
+-->HandlerMapping
+-->LoginController.toLogin
+-->ViewResolver
+-->login.jsp
+http://localhost:8080/springmvc02/tologin.do
+
+/login.do
+-->DispatcherServlet
+-->HandlerMapping
+-->LoginController.checkLogin
+-->ViewResolver
+-->错误login.jsp/正确ok.jsp
+http://localhost:8080/springmvc02/tologin.do
+===================================================
+1.Controller如何接收请求参数
+  a.利用HttpServletRequest
+  *b.利用业务方法参数
+    --方法参数名与请求参数key保持一致
+    --利用@RequestParam("key")
+    
+  login.do?username=xxx
+  public String f1(@RequestParam("username") String name);
+  http://localhost:8080/springmvc02/tologin.do
+  http://localhost:8080/springmvc02/login1.do?username=scott&password=1234
+  *c.利用实体对象当方法参数(适用大量参数比较多的情况)
+  http://localhost:8080/springmvc02/tologin.do
+  使用建议：少量参数使用b;大量参数使用c,
+  如果客户端表单数据没有格式检查，遇到非字符串类型参数建议使用a.
+  
+2.Controller如何向响应JSP传值
+  *a.利用HttpServletRequest
+  b.利用ModelAndView做返回值
+  *c.利用ModelMap方法参数
+  d.使用@ModelAttribute("key")
+  
+  public String checkLogin(@ModelAttribute("user")String username){
+      return "ok";//ok.jsp使用${user}
+  }
+  
+  @ModelAttribute("user")
+  public String getName(){
+     return "tom";
+  }
+  等价于下面
+  model.put("put",getName());//${user}
+  
+ 3.Controller如何使用Session
+ 
+ public String checkLogin(HttpServletRequest request){
+    HttpSession session = request.getSession();
+    session.setAttribute(key,value);
+ }
+  
+ public String checkLogin(HttpSession session){
+    session.setAttribute(key,value);
+ } 
+ ==============================================
+ 案例：列表显示功能
+ /list.do
+-->DispatcherServlet
+-->HandlerMapping
+-->ListController(构建一个List<User>,传递到list.jsp)
+-->ViewResolver
+-->/WEB-INF/list.jsp(JSTL <c:foreach>)
+
+List<User> list = new ArrayList();
+for(int i=0;i<10;i++){
+   User user = new User();
+   user.setUsername("tom"+i);
+   user.setPassword("1234"+i);
+   list.add(user);
+}
+================================================
+1.SpringMVC工作流程(理论)
+  a.浏览器发出一个HTTP请求
+  b.请求首先进入DispatcherServlet主控制器
+  c.主控制器调用HandlerMapping组件根据请求找映射的Controller处理
+  d.执行Controller处理方法，将返回结果给ViewResolver组件
+  e.ViewResolver组件根据Controller返回结果定位视图JSP,将模型数据传递给JSP
+  f.由JSP生成响应结果，给浏览器输出
+
+2.SpringMVC开发过程(应用)
+  a.搭建SpringMVC开发环境
+  b.流程设计
+    请求(变化)
+    -->DispatcherServlet(固定)
+    -->HandlerMapping(固定)
+    -->Controller组件(变化)
+    -->ViewResolver(固定)
+    -->JSP组件(变化)
+  c.编写JSP,Controller组件
+  d.配置处理流程    
+    
+3.如何接收请求参数(应用)
+    方法参数(参数名字与请求key保持一致)
+    方法参数(实体对象，实体属性与key保持一致)
+  如何向页面传值
+    添加ModelMap方法参数
+  如何使用session
+    添加HttpSession方法参数
+  
+=================================================
+/list.do-->Filter
+-->DispatcherServlet
+-->HandlerMapping   
+-->ListController
+-->ViewResolver
+-->/WEB-INF/list.jsp
+================================================
+4.如何解决中文接收乱码问题
+CharacterEncodingFilter(Spring-web.jar提供)
+5.如何处理异常
+6.如何实现登录权限检查
+
+request.setCharacterEncoding("utf8");//只适用于post提交请求
+request.getParameter("username");
+中文
+请求提交数据-->Controller-->Dao-->Db(乱码)
+jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
+web.xml
+<filter>
+     <filter-name>myfilter</filter-name><!--Referenced Libraries--spring-web.jar-->
+     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+     <init-param>
+          <param-name>encoding</param-name>
+          <param-value>UTF-8</param-value>
+     </init-param>
+</filter>
+<filter-mapping>
+     <filter-name>myfilter</filter-name>
+     <!--<servlet-name>springmvc</servlet-name>-->
+     <url-pattern>*.do</url-pattern>
+</filter-mapping>
+
