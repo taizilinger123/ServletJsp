@@ -132,9 +132,9 @@ for(int i=0;i<10;i++){
 4.如何解决中文接收乱码问题
 CharacterEncodingFilter(Spring-web.jar提供)
 5.如何处理异常
-  a.全局异常处理
+  *a.全局异常处理
     SimpleMappingExceptionResolver
-  b.局部异常处理
+  *b.局部异常处理
     @ExceptionHandler
     public String xxx(HttpServletRequest request, Exception e)
   c.自定义ExceptionResolver
