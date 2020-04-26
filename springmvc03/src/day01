@@ -155,3 +155,11 @@ web.xml
 </filter-mapping>
 http://localhost:8080/springmvc03/exception1.do
 http://localhost:8080/springmvc03/exception2.do
+
+toage.do 
+-->AgeController
+-->/WEB-INF/age.jsp
+
+age.do 
+-->AgeController
+-->/WEB-INF/age.jsp

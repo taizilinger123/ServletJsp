@@ -26,7 +26,7 @@
    <property name="suffix" value=".jsp"></property>
 </bean>
 
-<!-- 异常处理器 -->
+<!-- 异常处理器,全局异常处理方法 -->
 <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
      <property name="exceptionMappings">
          <props>
