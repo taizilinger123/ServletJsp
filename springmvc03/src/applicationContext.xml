@@ -27,13 +27,18 @@
 </bean>
 
 <!-- 异常处理器,全局异常处理方法 -->
+<!--<prop key="异常类型">视图名</prop>-->
+<!--  
 <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
      <property name="exceptionMappings">
-         <props>
-              <!--<prop key="异常类型">视图名</prop>-->
+         <props>           
               <prop key="java.lang.Exception">error</prop>
          </props>
      </property>
 </bean>
+-->
+
+<!-- 使用自定义的ExceptionResolver -->
+<bean class="org.tarena.exception.MyExceptionHandler"></bean>
 
 </beans>
