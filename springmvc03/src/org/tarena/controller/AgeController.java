@@ -16,6 +16,7 @@ public class AgeController {
 	
   @RequestMapping("/toage.do")
   public String toage(){
+	  //检查session是否有username
 	  return "age";//进入age.jsp
   }
   

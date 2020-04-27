@@ -142,6 +142,15 @@ CharacterEncodingFilter(Spring-web.jar提供)
     HandlerExceptionResolver
     
 6.如何实现登录权限检查
+  使用session进行约定值判断。
+  
+  实现方法:1.采用Filter;2.采用拦截器
+  a.拦截器组件简介
+  拦截器组件是SpringMVC特有组件。
+  拦截器组件可以在Controller之前拦截；
+  也可以在Controller之后拦截；
+  还可以在JSP解析完毕给浏览器输出之前拦截。
+  
 
 
 request.setCharacterEncoding("utf8");//只适用于post提交请求
