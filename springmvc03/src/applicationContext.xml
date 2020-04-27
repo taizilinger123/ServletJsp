@@ -44,6 +44,7 @@
 <!-- 配置拦截器 -->
 <mvc:interceptors>
      <mvc:interceptor>
+          <!-- 拦截哪些请求 -->
           <mvc:mapping path="/**"/>
           <bean class="org.tarena.interceptor.LoginInterceptor"></bean>
      </mvc:interceptor>
