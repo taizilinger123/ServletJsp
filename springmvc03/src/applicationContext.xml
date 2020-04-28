@@ -46,6 +46,9 @@
      <mvc:interceptor>
           <!-- 拦截哪些请求 -->
           <mvc:mapping path="/**"/>
+          <!-- 放过哪些请求 -->
+          <mvc:exclude-mapping path="/tologin.do"/>
+          <mvc:exclude-mapping path="/login3.do"/>
           <bean class="org.tarena.interceptor.LoginInterceptor"></bean>
      </mvc:interceptor>
 </mvc:interceptors>
