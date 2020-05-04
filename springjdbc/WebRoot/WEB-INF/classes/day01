@@ -1,0 +1,106 @@
+1.Spring与JDBC整合应用
+  a.提供了编写DAO的工具类
+    JdbcTemplate
+    JdbcTemplate.update("insert..",参数);
+  b.提供了AOP式事务管理(不需要在方法中追加事务提交和回滚)
+    FileWriter fw = new FileWriter();
+    //fw.write();
+    PrintWriter pw = new PrintWriter(fw);//装饰器
+    pw.println("xxx");
+  c.提供了统一的异常处理
+    DataAccessException
+
+2.Spring整合JDBC步骤
+  a.搭建spring+jdbc开发环境
+    引入spring(ioc,aop,dao)开发包
+    添加src/applicationContext.xml
+    数据库驱动
+  b.编写实体类Emp
+  c.编写EmpDAO组件 
+  d.在applicationContext.xml中扫描EmpDAO,注入JdbcTemplate对象
+  
+  DBCP(<bean>)-->JdbcTemplate(<bean>)-->EmpDao(扫描)
+  
+  =============单独使用JDBC============
+  a.引入驱动包
+  b.编写DBUtil
+  c.编写实体类Emp
+  d.编写EmpDao
+
+a.增删改
+  --获取Connection
+  --获取Statement
+  --设置SQL中?参数
+  --执行SQL操作
+  --释放Connection
+b.查询
+  --获取Connection
+  --获取Statement
+  --设置SQL中?参数
+  --执行SQL操作获取ResultSet结果
+  --将ResultSet结果封装成实体对象
+  --释放Connection
+
+<property name="dataSource"></property>dataSource数据源,连接池;dbcp,c3p0,proxool
+C:\Users\sige>mysql -uroot  -p123456
+mysql> show  databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| jsd1507db          |
+| mysql              |
+| performance_schema |
+| sys                |
+| tt                 |
++--------------------+
+6 rows in set (0.11 sec)
+mysql> use jsd1507db;
+Database changed
+mysql> show  tables;
++---------------------+
+| Tables_in_jsd1507db |
++---------------------+
+| emp                 |
+| user                |
++---------------------+
+2 rows in set (0.00 sec)
+mysql> desc emp;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(50) | YES  |     | NULL    |                |
+| salary | double      | YES  |     | NULL    |                |
+| age    | int(11)     | YES  |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+4 rows in set (0.12 sec)
+
+mysql> desc user;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username | varchar(50)  | YES  | UNI | NULL    |                |
+| pwd      | varchar(30)  | YES  |     | NULL    |                |
+| name     | varchar(250) | YES  |     | NULL    |                |
+| gender   | char(1)      | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+5 rows in set (0.19 sec)
+mysql> select  *  from  emp;
++----+--------+--------+------+
+| id | name   | salary | age  |
++----+--------+--------+------+
+| 18 | lili   | 200000 |   44 |
+| 19 | 盛磊   | 900000 |   33 |
+|  3 | John   |   6000 |   66 |
+| 11 | emp200 |   2000 |   33 |
+|  5 | emp02  |   3000 |   23 |
+| 13 | 月月   |   2000 |   22 |
+|  7 | emp04  |   2000 |   22 |
+| 14 | 张三   |  20000 |   22 |
+| 17 | 张三   |  10000 |   33 |
+| 20 | 杰伦   |  20000 |   33 |
+| 21 | spring |  10000 |   20 |
++----+--------+--------+------+
+11 rows in set (0.00 sec)
