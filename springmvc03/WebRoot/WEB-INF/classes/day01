@@ -155,8 +155,6 @@ CharacterEncodingFilter(Spring-web.jar提供)
     在约定方法中添加要插入的逻辑
     然后在applicationContext.xml中配置
     
-  
-
 
 request.setCharacterEncoding("utf8");//只适用于post提交请求
 request.getParameter("username");
@@ -187,3 +185,47 @@ toage.do
 age.do 
 -->AgeController
 -->/WEB-INF/age.jsp
+
+1.Spring与JDBC整合应用
+  a.提供了编写DAO的工具类
+    JdbcTemplate
+    JdbcTemplate.update("insert..",参数);
+  b.提供了AOP式事务管理(不需要在方法中追加事务提交和回滚)
+    FileWriter fw = new FileWriter();
+    //fw.write();
+    PrintWriter pw = new PrintWriter(fw);//装饰器
+    pw.println("xxx");
+  c.提供了统一的异常处理
+    DataAccessException
+
+2.Spring整合JDBC步骤
+  a.搭建spring+jdbc开发环境
+    引入spring(ioc,aop,dao)开发包
+    添加src/applicationContext.xml
+    数据库驱动
+  b.编写实体类
+  c.编写DAO组件 
+  
+  
+  
+  =============单独使用JDBC============
+  a.引入驱动包
+  b.编写DBUtil
+  c.编写实体类Emp
+  d.编写EmpDao
+
+a.增删改
+  --获取Connection
+  --获取Statement
+  --设置SQL中?参数
+  --执行SQL操作
+  --释放Connection
+b.查询
+  --获取Connection
+  --获取Statement
+  --设置SQL中?参数
+  --执行SQL操作获取ResultSet结果
+  --将ResultSet结果封装成实体对象
+  --释放Connection
+
+
