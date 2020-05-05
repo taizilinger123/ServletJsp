@@ -104,3 +104,27 @@ mysql> select  *  from  emp;
 | 21 | spring |  10000 |   20 |
 +----+--------+--------+------+
 11 rows in set (0.00 sec)
+
+public List query(String sql,RowMapper rowMapper){
+     List  list = new ArrayList();
+     Connection conn = null;
+     PreparedStatement prep = null;
+     ResultSet rst = null;
+     try{
+         conn = DBUtil.getConnection();
+         prep = conn.prepareStatement(sql);
+         rst = prep.executeQuery();
+         while(rst.next()){
+             Object obj = rowMapper.mapRow(rst);
+             list.add(obj);
+         }
+         return list;
+     }catch(Exception e){
+         e.printStackTrace();
+         throw e;
+     }finally{
+         DBUtil.close(conn);
+     }
+
+
+}
