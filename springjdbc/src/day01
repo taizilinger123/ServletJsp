@@ -14,7 +14,7 @@
   a.搭建spring+jdbc开发环境
     引入spring(ioc,aop,dao)开发包
     添加src/applicationContext.xml
-    数据库驱动
+    数据库驱动,dbcp连接池
   b.编写实体类Emp
   c.编写EmpDAO组件 
   d.在applicationContext.xml中扫描EmpDAO,注入JdbcTemplate对象

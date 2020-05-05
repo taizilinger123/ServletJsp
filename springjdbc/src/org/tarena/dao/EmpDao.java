@@ -16,4 +16,10 @@ public class EmpDao {
 	  Object[] params = {emp.getName(),emp.getSalary(),emp.getAge()};
 	  template.update(sql, params);
    }
+   
+   public void delete(int id){
+	   String sql = "delete from emp where  id=?";
+	   Object[] params = {id};
+	   template.update(sql,params);
+   }
 }
