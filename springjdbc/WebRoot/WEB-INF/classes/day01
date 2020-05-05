@@ -2,6 +2,10 @@
   a.提供了编写DAO的工具类
     JdbcTemplate
     JdbcTemplate.update("insert..",参数);
+    JdbcTemplate.query();
+    JdbcTemplate.queryForObject();
+    select count(*) from emp 
+    int rows = JdbcTemplate.queryForInt();
   b.提供了AOP式事务管理(不需要在方法中追加事务提交和回滚)
     FileWriter fw = new FileWriter();
     //fw.write();
