@@ -108,6 +108,31 @@ mysql> select  *  from  emp;
 | 21 | spring |  10000 |   20 |
 +----+--------+--------+------+
 11 rows in set (0.00 sec)
+show create table cost;//查看建表字符集charset=utf8
+delete from cost;
+set names gbk;
+mysql> \s
+--------------
+mysql  Ver 14.14 Distrib 5.7.26, for Win64 (x86_64)
+
+Connection id:          12
+Current database:       jsd1507db
+Current user:           root@localhost
+SSL:                    Not in use
+Using delimiter:        ;
+Server version:         5.7.26 MySQL Community Server (GPL)
+Protocol version:       10
+Connection:             localhost via TCP/IP
+Server characterset:    latin1
+Db     characterset:    utf8         #数据库编码格式是utf8
+Client characterset:    gbk          #看连接和客户端编码格式是gbk
+Conn.  characterset:    gbk
+TCP port:               3306
+Uptime:                 3 days 3 hours 58 min 10 sec
+
+Threads: 1  Questions: 124  Slow queries: 0  Opens: 129  Flush tables: 1  Open t
+ables: 122  Queries per second avg: 0.000
+--------------
 
 public List query(String sql,RowMapper rowMapper){
      List  list = new ArrayList();
