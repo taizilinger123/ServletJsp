@@ -179,3 +179,19 @@ INSERT INTO  COST VALUES (7,'mm',10,5,null,0,'',DEFAULT,DEFAULT,NULL);
 INSERT INTO  COST VALUES (8,'nn',10,7,null,0,'',DEFAULT,DEFAULT,NULL);
 INSERT INTO  COST VALUES (9,'qq',10,4,null,0,'',DEFAULT,DEFAULT,NULL);
 COMMIT;
+
+=============资费列表显示=====================
+a.搭建SpringMVC开发环境
+  --添加ioc,webmvc开发包
+  --添加src/applicationContext.xml
+b.设计流程
+  /cost/list.do
+  -->DispatcherServlet 
+  -->handlerMapping 
+  -->CostListController
+  -->CostDao
+  -->ViewResolver
+  -->/fee/fee_list.jsp
+  
+  
+  

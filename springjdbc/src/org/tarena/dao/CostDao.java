@@ -9,12 +9,15 @@ import org.springframework.stereotype.Repository;
 import org.tarena.entity.Cost;
 import org.tarena.entity.CostRowMapper;
 
-@Repository//…®√Ëid=costDao
-public class CostDao {
-   @Resource//◊¢»Î
+@Repository//Êâ´Êèèid=costDao
+public class CostDao implements ICostDao {
+   @Resource//Ê≥®ÂÖ•
    private JdbcTemplate template;
    
-   public List<Cost> findAll(){
+   /* (non-Javadoc)
+ * @see org.tarena.dao.ICostDao#findAll()
+ */
+public List<Cost> findAll(){
 	   String sql = "select *  from cost";
 	   CostRowMapper rowMapper = new CostRowMapper();
 	   List<Cost> list = template.query(sql, rowMapper);
