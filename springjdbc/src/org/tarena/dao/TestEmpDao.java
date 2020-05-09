@@ -15,15 +15,15 @@ public class TestEmpDao {
 		String conf = "applicationContext.xml";
 		ApplicationContext ac = new ClassPathXmlApplicationContext(conf);
 		EmpDao empDao = ac.getBean("empDao",EmpDao.class);
-		//²âÊÔÌí¼Ó
+		//æµ‹è¯•æ·»åŠ 
 //		Emp emp = new Emp();
 //		emp.setName("spring");
 //		emp.setSalary(10000.0);
 //		emp.setAge(20);
 //		empDao.save(emp);
-		//²âÊÔÉ¾³ý
+		//æµ‹è¯•åˆ é™¤
 //		empDao.delete(21);
-		//²âÊÔ²éÑ¯
+		//æµ‹è¯•æŸ¥è¯¢
 		List<Emp> list = empDao.findAll();
 		for(Emp emp : list){
 			System.out.println(emp.getId()+""+emp.getName());
