@@ -1,4 +1,5 @@
 ﻿<%@ page language="java"  pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -80,34 +81,24 @@
                             <th>开通时间</th>
                             <th class="width50">状态</th>
                             <th class="width200"></th>
-                        </tr>                      
+                        </tr>
+                    <c:forEach items="${costs}" var="c">                  
                         <tr>
-                            <td>1</td>
-                            <td><a href="fee_detail.html">包 20 小时</a></td>
-                            <td>20 小时</td>
-                            <td>24.50 元</td>
-                            <td>3.00 元/小时</td>
-                            <td>2013/01/01 00:00:00</td>
-                            <td></td>
-                            <td>暂停</td>
+                            <td>${c.cost_id }</td>
+                            <td><a href="fee_detail.html">${c.name}</a></td>
+                            <td>${c.base_duration }小时</td>
+                            <td>${c.base_cost }元</td>
+                            <td>${c.unit_cost }元/小时</td>
+                            <td>${c.creatime }</td>
+                            <td>${c.startime }</td>
+                            <td>${c.status }</td>
                             <td>                                
                                 <input type="button" value="启用" class="btn_start" onclick="startFee();" />
                                 <input type="button" value="修改" class="btn_modify" onclick="location.href='fee_modi.html';" />
                                 <input type="button" value="删除" class="btn_delete" onclick="deleteFee();" />
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a href="fee_detail.html">包 40 小时</a></td>
-                            <td>40 小时</td>
-                            <td>40.50 元</td>
-                            <td>3.00 元/小时</td>
-                            <td>2013/01/21 00:00:00</td>
-                            <td>2013/01/23 00:00:00</td>
-                            <td>开通</td>
-                            <td>                                
-                            </td>
-                        </tr>
+                     </c:forEach>     
                     </table>
                     <p>业务说明：<br />
                     1、创建资费时，状态为暂停，记载创建时间；<br />
