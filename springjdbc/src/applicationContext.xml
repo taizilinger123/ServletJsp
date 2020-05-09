@@ -32,7 +32,7 @@
 
 <!-- 配置viewResolver -->
 <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-   <property name="prefix" value="/fee/"></property>
+   <property name="prefix" value="/"></property>
    <property name="suffix" value=".jsp"></property>
 </bean>
 
