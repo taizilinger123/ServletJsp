@@ -1,4 +1,4 @@
-﻿<%@ page language="java"  pageEncoding="utf-8"%>
+﻿<%@ page language="java"  pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -81,24 +81,24 @@
                             <th>开通时间</th>
                             <th class="width50">状态</th>
                             <th class="width200"></th>
-                        </tr>
-                    <c:forEach items="${costs}" var="c">                  
+                        </tr>     
+                        <c:forEach items="${costs}" var="c">                       
                         <tr>
                             <td>${c.cost_id }</td>
-                            <td><a href="fee_detail.html">${c.name}</a></td>
+                            <td><a href="fee_detail.html">${c.name }</a></td>
                             <td>${c.base_duration }小时</td>
                             <td>${c.base_cost }元</td>
                             <td>${c.unit_cost }元/小时</td>
                             <td>${c.creatime }</td>
                             <td>${c.startime }</td>
-                            <td>${c.status }</td>
+                            <td>${c.status=="0"?"开通":"暂停" }</td>
                             <td>                                
                                 <input type="button" value="启用" class="btn_start" onclick="startFee();" />
                                 <input type="button" value="修改" class="btn_modify" onclick="location.href='fee_modi.html';" />
                                 <input type="button" value="删除" class="btn_delete" onclick="deleteFee();" />
                             </td>
                         </tr>
-                     </c:forEach>     
+                        </c:forEach>     
                     </table>
                     <p>业务说明：<br />
                     1、创建资费时，状态为暂停，记载创建时间；<br />

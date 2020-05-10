@@ -187,11 +187,12 @@ a.搭建SpringMVC开发环境
 b.设计流程
   /cost/list.do
   -->DispatcherServlet 
-  -->handlerMapping 
+  -->handlerMapping--@RequestMapping 
   -->CostListController
   -->CostDao
   -->ViewResolver
   -->/fee/fee_list.jsp
-  
-  
+ 
+CostDao.java->右键->Refactor->Extract Interface
+http://localhost:8080/springjdbc/cost/list.do
   
