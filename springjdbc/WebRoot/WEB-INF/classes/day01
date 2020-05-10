@@ -195,4 +195,5 @@ b.设计流程
  
 CostDao.java->右键->Refactor->Extract Interface
 http://localhost:8080/springjdbc/cost/list.do
+http://localhost:8080/springjdbc/cost/list.do?page=1
   

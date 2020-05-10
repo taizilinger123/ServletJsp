@@ -18,9 +18,10 @@ public class CostListController{
 	private ICostDao costDao;//注入
    
 	@RequestMapping("/list.do")
-	public String execute(ModelMap model){
-		List<Cost> list = costDao.findAll();
+	public String execute(int page,ModelMap model){
+		List<Cost> list = costDao.findPage(page);
 		model.put("costs", list);
-		return "fee_list";//fee_list.jsp
+		model.put("page", page);
+		return "fee/fee_list";//fee_list.jsp这里路径是fee/fee_list之前写错/fee_list一直不出效果
 	}
 }

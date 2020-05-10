@@ -23,4 +23,13 @@ public List<Cost> findAll(){
 	   List<Cost> list = template.query(sql, rowMapper);
 	   return list;
    }
+
+public List<Cost> findPage(int page) {
+	String sql = "select * from cost limit ?,5";
+	int begin = (page-1)*5;
+	Object[] params = {begin};
+	CostRowMapper rowMapper = new CostRowMapper();
+	List<Cost> list = template.query(sql, params, rowMapper);
+	return list;
+}
 }

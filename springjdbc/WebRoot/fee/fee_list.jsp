@@ -109,13 +109,21 @@
                 </div>
                 <!--分页-->
                 <div id="pages">
-        	        <a href="#">上一页</a>
+                <c:choose>
+                    <c:when test="${page>1}">
+                         <a href="list.do?page=${page-1 }">上一页</a>
+                    </c:when>
+                    <c:otherwise>
+                         <a>上一页</a>
+                    </c:otherwise>
+                </c:choose>
+           	       
                     <a href="#" class="current_page">1</a>
                     <a href="#">2</a>
                     <a href="#">3</a>
                     <a href="#">4</a>
                     <a href="#">5</a>
-                    <a href="#">下一页</a>
+                    <a href="list.do?page=${page+1 }">下一页</a>
                 </div>
             </form>
         </div>
