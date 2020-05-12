@@ -14,6 +14,10 @@
         select * from emp where name like #{name}
     </select>
     
-    
+    <select id="findById" 
+            parameterType="int"
+            resultType="org.tarena.entity.Emp">
+       select  *  from emp where id=#{id}
+    </select>
     
 </mapper>
