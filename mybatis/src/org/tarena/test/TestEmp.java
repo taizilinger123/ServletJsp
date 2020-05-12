@@ -1,7 +1,10 @@
 package org.tarena.test;
 
 import java.io.IOException;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
+import org.tarena.entity.Emp;
 
 public class TestEmp {
 
@@ -11,7 +14,11 @@ public class TestEmp {
 	 */
 	public static void main(String[] args) throws IOException {
        SqlSession session = MyBatisUtil.getSqlSession();
-	   System.out.println("使用session操作");
+       //调用id=findAll的SQL
+       List<Emp> list = session.selectList("findAll");
+       for(Emp e : list){
+    	   System.out.println(e.getName());
+       }
 	   session.close();//释放session
 	}
 }
