@@ -1,0 +1,24 @@
+=======================MyBatis================================
+1.MyBatis简介
+  iBatis-->google(MyBatis)
+  作用：封装了JDBC操作，简化数据库访问代码
+  封装功能如下：
+  --封装了获取连接，执行SQL,释放连接
+  --封装了SQL参数设置(参数Emp)
+  insert into emp (name,age) values(#{name},#{age});
+  update("insert",Object[])
+  --封装了记录映射成实体对象过程
+    实体类属性名与查询结果集ResultSet中列名保持一致
+    
+  开发者主要工作：写SQL和实体类，然后使用SqlSession对象执行SQL操作
+  
+  
+2.MyBatis主要结构
+    
+    
+    
+    
+    
+3.MyBatis使用方法
+
+  
