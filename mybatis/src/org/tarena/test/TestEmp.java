@@ -15,7 +15,8 @@ public class TestEmp {
 	public static void main(String[] args) throws IOException {
        SqlSession session = MyBatisUtil.getSqlSession();
        //调用id=findAll的SQL
-       List<Emp> list = session.selectList("findAll");
+//       List<Emp> list = session.selectList("findAll");
+       List<Emp> list = session.selectList("findLikeName","%月%");
        for(Emp e : list){
     	   System.out.println(e.getName());
        }
