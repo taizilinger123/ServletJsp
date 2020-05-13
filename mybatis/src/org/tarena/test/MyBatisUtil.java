@@ -10,8 +10,10 @@ public class MyBatisUtil {
 		   SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
 		   //加载SqlMapConfig.xml文件
 		   String conf = "SqlMapConfig.xml";
+		   //Reader reader = Resources.getResourceAsReader(conf);
 		   InputStream confStream = MyBatisUtil.class.getClassLoader().getResourceAsStream(conf);
 		   //获取SqlSessionFactory
+		   //SqlSessionFactory factory = builder.build(conf);
 		   SqlSessionFactory factory = builder.build(confStream);
 	       //获取SqlSession
 		   SqlSession session = factory.openSession();
