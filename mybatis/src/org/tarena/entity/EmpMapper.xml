@@ -20,4 +20,18 @@
        select  *  from emp where id=#{id}
     </select>
     
+    <insert id="save" parameterType="org.tarena.entity.Emp">
+        insert into emp (name,salary,age) values (#{name},#{salary},#{age})
+    </insert>
+    
+    <!-- session.delete(id,16) -->
+    <delete id="delete" parameterType="int">
+        delete from emp where id=#{eid}
+    </delete>
+    
+    <!-- session.update(id,emp) -->
+    <update id="updateSalary" parameterType="org.tarena.entity.Emp">
+        update emp set salary=#{salary} where id=#{id}
+    </update>
+    
 </mapper>

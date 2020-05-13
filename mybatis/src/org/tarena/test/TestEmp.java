@@ -22,12 +22,23 @@ public class TestEmp {
 //    	   System.out.println(e.getName());
 //       }
        //测试单行查询
-       Emp emp = session.selectOne("findById",18);
-       if(emp != null){
-           System.out.println(emp.getName());
-       }else{
-    	   System.out.println("未查到记录");
-       }
+//       Emp emp = session.selectOne("findById",18);
+//       if(emp != null){
+//           System.out.println(emp.getName());
+//       }else{
+//    	   System.out.println("未查到记录");
+//       }
+       //测试添加操作
+//       Emp emp = new Emp();
+//       emp.setName("scott");
+//       emp.setSalary(5000.0);
+//       emp.setAge(20);
+//       session.insert("save",emp);
+       Emp emp = new Emp();
+       emp.setId(22);
+       emp.setSalary(8000.0);
+       session.update("updateSalary",emp);
+       session.commit();//提交事务，增删改操作必须做事务提交
 	   session.close();//释放session
 	}
 }
