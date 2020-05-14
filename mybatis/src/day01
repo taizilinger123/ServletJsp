@@ -6,7 +6,7 @@
   --封装了获取连接，执行SQL,释放连接
   --封装了SQL参数设置(参数Emp)
   insert into emp (name,age) values(#{name},#{age});
-  update("insert",Object[])
+  update("insert",Object[])/object[]或者map
   --封装了记录映射成实体对象过程
     实体类属性名与查询结果集ResultSet中列名保持一致
     
