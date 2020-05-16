@@ -21,10 +21,13 @@ public class TestCost {
 //			System.out.println(c.getCost_id()+" "+c.getName());
 //		}
 		//测试返回Map结果
-		List<Map<String, Object>> list = session.selectList("findMap");
-		for(Map<String, Object> data : list){
-			System.out.println(data.get("cost_id")+" "+data.get("name"));
-		}
+//		List<Map<String, Object>> list = session.selectList("findMap");
+//		for(Map<String, Object> data : list){
+//			System.out.println(data.get("cost_id")+" "+data.get("name"));
+//		}
+		//测试返回int值
+		int rows = session.selectOne("findRows");
+		System.out.println("记录数:"+rows);
 		session.close();
 	}
 }

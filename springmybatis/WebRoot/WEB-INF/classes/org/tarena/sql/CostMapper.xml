@@ -16,4 +16,8 @@
         select cost_id,name from cost
     </select>
     
+    <select id="findRows" resultType="int">
+        select count(*) from cost
+    </select>
+    
 </mapper>
