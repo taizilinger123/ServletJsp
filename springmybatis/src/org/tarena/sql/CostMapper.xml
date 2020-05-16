@@ -19,7 +19,7 @@
     <select id="findRows" resultType="int">
         select count(*) from cost
     </select>
-    <!-- 使用别名 -->
+    <!-- 当属性名与字段名不一致时，使用别名 -->
 <!-- 
     <select id="findCost" resultType="org.tarena.entity.CostBean1">
         select cost_id id,name,status,creatime createTime from cost
