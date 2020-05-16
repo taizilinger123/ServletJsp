@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="costsql">
+    
+    
+    <select id="findAll" resultType="org.tarena.entity.Cost">
+       select *  from cost;
+    </select>
+    
+    <select id="findPage" parameterType="int" resultType="org.tarena.entity.Cost">
+       select *  from cost limit #{begin},5
+    </select>
+    
+</mapper>
