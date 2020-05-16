@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.tarena.entity.Cost;
+import org.tarena.entity.CostBean1;
 import org.tarena.util.MyBatisUtil;
 
 public class TestCost {
@@ -26,8 +27,12 @@ public class TestCost {
 //			System.out.println(data.get("cost_id")+" "+data.get("name"));
 //		}
 		//测试返回int值
-		int rows = session.selectOne("findRows");
-		System.out.println("记录数:"+rows);
+//		int rows = session.selectOne("findRows");
+//		System.out.println("记录数:"+rows);
+		List<CostBean1> list = session.selectList("findCost");
+		for(CostBean1 c : list){
+			System.out.println(c.getId()+" "+c.getName());
+		}
 		session.close();
 	}
 }
