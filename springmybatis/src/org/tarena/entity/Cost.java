@@ -4,16 +4,16 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Cost implements Serializable {
-	private Integer cost_id;//×Ê·ÑID
-	private String name;//×Ê·ÑÃû
-	private Long base_duration;//»ù±¾Ê±³¤
-	private Double base_cost; //»ù±¾·ÑÓÃ
-	private Double unit_cost;//µ¥Î»·ÑÓÃ
-	private String status;//×´Ì¬
-	private String descr;//ÃèÊö
-	private Date creatime;//´´½¨Ê±¼ä
-	private Date startime;//ÆôÓÃÊ±¼ä
-	private String cost_type;//×Ê·ÑÀàĞÍ
+	private Integer cost_id;//èµ„è´¹ID
+	private String name;//èµ„è´¹å
+	private Long base_duration;//åŸºæœ¬æ—¶é•¿
+	private Double base_cost; //åŸºæœ¬è´¹ç”¨
+	private Double unit_cost;//å•ä½è´¹ç”¨
+	private String status;//çŠ¶æ€
+	private String descr;//æè¿°
+	private Date creatime;//åˆ›å»ºæ—¶é—´
+	private Date startime;//å¯ç”¨æ—¶é—´
+	private String cost_type;//èµ„è´¹ç±»å‹
 
 	public Integer getCost_id() {
 		return cost_id;

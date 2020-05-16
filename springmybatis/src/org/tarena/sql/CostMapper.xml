@@ -12,4 +12,8 @@
        select *  from cost limit #{begin},5
     </select>
     
+    <select id="findMap" resultType="map">
+        select cost_id,name from cost
+    </select>
+    
 </mapper>
