@@ -8,3 +8,8 @@
   --Map集合
   --基本值
 2.Mapper映射器接口规则
+  a.根据SQL定义的id属性当接口方法名
+  b.根据SQL定义的parameterType类型当方法参数类型
+  c.根据SQL定义的resultType类型定义方法返回类型
+    (多行使用List<泛型>;单行使用泛型)
+  d.将SQL定义文件<mapper>的namespace属性指定成包名.接口名
