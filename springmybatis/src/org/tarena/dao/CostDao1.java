@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.tarena.entity.Cost;
 import org.tarena.util.MyBatisUtil;
 
-public class CostDao1 implements ICostDao{
+public class CostDao1 implements ICostDao1{
 
 	public List<Cost> findAll() {
 		SqlSession session = MyBatisUtil.getSession();
