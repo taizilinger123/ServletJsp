@@ -25,6 +25,7 @@ CostDao
 SqlSessionFactoryBean组件，封装了创建SqlSessionFactory过程
 
 DataSource(dbcp)
+   =注入db连接参数
 -->SqlSessionFactoryBean(ssf)
    =注入dataSource
    =注入sql定义文件
