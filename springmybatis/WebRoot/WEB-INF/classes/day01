@@ -13,3 +13,15 @@
   c.根据SQL定义的resultType类型定义方法返回类型
     (多行使用List<泛型>;单行使用泛型)
   d.将SQL定义文件<mapper>的namespace属性指定成包名.接口名
+==================Spring+Mybatis======================
+mybatis-spring.jar整合包
+
+MapperFactoryBean组件,封装了根据
+Mapper映射器接口生成实现组件的功能
+
+session.getMapper(CostDao.class);
+CostDao
+
+SqlSessionFactoryBean组件，封装了创建SqlSessionFactory过程
+
+DataSource(dbcp)->SqlSessionFactoryBean(ssf)->MapperFactoryBean(costDao)
