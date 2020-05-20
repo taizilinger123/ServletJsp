@@ -13,11 +13,24 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
 <!-- 可以根据给定的Mapper接口生成实现组件 -->
-<bean id="costDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-    <!-- 指定mapper接口 -->
-    <property name="mapperInterface" value="org.tarena.dao.CostDao"></property>
-    <!-- 指定sqlsession资源 -->
+<!-- 指定mapper接口 -->
+<!-- 指定sqlsession资源 -->
+<!--  
+<bean id="costDao" class="org.mybatis.spring.mapper.MapperFactoryBean">  
+    <property name="mapperInterface" value="org.tarena.dao.CostDao"></property> 
     <property name="sqlSessionFactory" ref="ssf"></property>
+</bean>
+-->
+
+<!-- 可以根据指定路径批量生成Dao实现 -->
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!-- 扫描org.tarena.dao包下所有接口，批量生成实现 -->
+   <property name="basePackage" value="org.tarena.dao"></property>
+   <property name="annotationClass" value="org.tarena.annotation.MyBatisDao"></property>
+   <!-- 自动注入sqlsessionfactory -->
+   <!-- 
+   <property name="sqlSessionFactory" ref="ssf"></property>
+    -->
 </bean>
 
 <!-- 创建sqlsessionfactory -->
@@ -27,6 +40,7 @@
 	<!-- 注入SQL语句文件 -->
 	<property name="mapperLocations" value="classpath:org/tarena/sql/*.xml"></property>
 </bean>
+
 <!-- 定义dbcp的DataSource -->
 <bean id="dbcp" class="org.apache.commons.dbcp.BasicDataSource">
     <property name="username" value="root"></property>

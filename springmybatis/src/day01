@@ -16,19 +16,24 @@
 ==================Spring+Mybatis======================
 mybatis-spring.jar整合包
 
-MapperFactoryBean组件,封装了根据
-Mapper映射器接口生成实现组件的功能
+MapperFactoryBean组件,封装了根据Mapper映射器接口生成实现组件的功能
+
+MapperScannerConfigurer组件，封装了批量生成Mapper接口组件的功能。(自动生成Dao接口实现)
+
+SqlSessionTemplate组件，自己编写Dao接口实现时可以简化编程(自己编写Dao接口实现)
 
 session.getMapper(CostDao.class);
 CostDao
 
 SqlSessionFactoryBean组件，封装了创建SqlSessionFactory过程
 
+
+================整合结构=================
 DataSource(dbcp)
    =注入db连接参数
 -->SqlSessionFactoryBean(ssf)
    =注入dataSource
    =注入sql定义文件
--->MapperFactoryBean(costDao)
+-->MapperScannerConfigurer(costDao)
    =注入sqlsessionfactory
-   =注入CostDao接口
+   =注入接口所在basepackage
