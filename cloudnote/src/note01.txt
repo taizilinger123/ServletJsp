@@ -40,7 +40,7 @@ public class NoteResult{
   private Object data;
 }
 
-导入MySQL数据库
+导入window7的MySQL数据库
 set names utf8;
 source cloud_note.sql文件位置
 
