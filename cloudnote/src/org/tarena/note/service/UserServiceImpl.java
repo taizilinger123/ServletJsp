@@ -17,11 +17,13 @@ public class UserServiceImpl implements UserService{
 
 		NoteResult result = new NoteResult();
 		User user = userDao.findByName(name);
+		//如果user返回null,说明按name查询条件不满足，表示name不存在
 		if(user == null){
 			result.setStatus(1);
 			result.setMsg("用户名不存在");
 			return result;
 		}
+		//如果user返回不为null,说明用户名正确，然后比对密码
 		if(!user.getCn_user_password().equals(pwd)){
 			result.setStatus(2);
 			result.setMsg("密码不正确");
