@@ -29,4 +29,10 @@
    <!-- 自动注入sqlsessionfactory -->
 </bean>
 
+<!-- 开启扫描，扫描Controller,Service组件 -->
+<context:component-scan base-package="org.tarena.note"/>
+
+<!-- handlermapping,支持@RequestMapping,@ResponseBody,@Exceptionhandler -->
+<mvc:annotation-driven />
+
 </beans>
