@@ -40,16 +40,6 @@ public class NoteResult{
   private Object data;
 }
 
-if(user == null){
-    用户名错误
-}else{
-   if(!user.getPassword.equals(pwd)){
-        密码错误
-   }else{
-        密码和用户名正确
-   }
-}
-
 导入window7的MySQL数据库
 set names utf8;
 source cloud_note.sql文件位置
@@ -107,5 +97,23 @@ Deploy MyEclipse->Add->Browse->G:\apache-tomcat-7.0.6\webapps  //删除webapps�
        -->UserService.checkLogin
        -->UserDao-->cn_user(查询)
     -->调用jackson.jar返回json结果
+    
+
+if(user == null){
+    用户名错误
+}else{
+   if(!user.getPassword.equals(pwd)){
+        密码错误
+   }else{
+        密码和用户名正确
+   }
+}
+
+密码:MD5+Base64
+
+RSA非对称加密
+1234--密钥1加密-->密文+密钥2-->使用者
+
 http://localhost:8080/cloudnote/user/login.do?name=tom&pwd=123
 http://localhost:8080/cloudnote/user/login.do?name=demo&pwd=/OqSD3QStdp74M9CuMk3WQ==
+http://localhost:8080/cloudnote/user/login.do?name=demo&pwd=1234

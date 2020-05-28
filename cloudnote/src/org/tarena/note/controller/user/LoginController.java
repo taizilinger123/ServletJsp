@@ -17,7 +17,7 @@ public class LoginController {
     
 	@RequestMapping("/login.do")
 	@ResponseBody//将返回值NoteResult转成json输出
-	public NoteResult execute(String name,String pwd){
+	public NoteResult execute(String name,String pwd) throws Exception{
          NoteResult result = userService.checkLogin(name, pwd);
          return result;
 	}
