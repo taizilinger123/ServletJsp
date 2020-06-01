@@ -9,7 +9,7 @@ public class NoteUtil {
     	//利用md5对msg处理
     	MessageDigest  md = MessageDigest.getInstance("MD5");
     	byte[] input = msg.getBytes();
-    	byte[] output = md.digest(input);//将字节信息
+    	byte[] output = md.digest(input);//将字节信息处理
     	//将md5处理的output结果转成字符串
     	String result = Base64.encodeBase64String(output);
     	return result;

@@ -113,7 +113,7 @@ if(user == null){
 
 RSA非对称加密
 1234--密钥1加密-->密文+密钥2-->使用者
-
+mysql> update cn_user  set cn_user_password='gdyb21LQTcIANtvYMT7QVQ==';
 http://localhost:8080/cloudnote/user/login.do?name=tom&pwd=123
 http://localhost:8080/cloudnote/user/login.do?name=demo&pwd=/OqSD3QStdp74M9CuMk3WQ==
 http://localhost:8080/cloudnote/user/login.do?name=demo&pwd=1234
