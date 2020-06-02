@@ -35,6 +35,7 @@ public class UserServiceImpl implements UserService{
 		}
 		result.setStatus(0);
 		result.setMsg("用户名和密码正确");
+		result.setData(user.getCn_user_id());//返回user_id
 		return result;
 	}
 
