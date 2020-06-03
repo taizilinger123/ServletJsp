@@ -66,6 +66,22 @@ Query OK, 1 row affected (0.00 sec)
 
 mysql> source   F:/myeclipse851workspace/Cloud_Note/cloud_note.sql;
 Query OK, 0 rows affected (0.00 sec)
+mysql> desc cn_user;
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    23
+Current database: cloud_note
+
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| cn_user_id       | varchar(100) | NO   | PRI | NULL    |       |
+| cn_user_name     | varchar(100) | YES  |     | NULL    |       |
+| cn_user_password | varchar(100) | YES  |     | NULL    |       |
+| cn_user_token    | varchar(100) | YES  |     | NULL    |       |
+| cn_user_nick     | varchar(100) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
 Deploy MyEclipse->Add->Browse->G:\apache-tomcat-7.0.6\webapps  //删除webapps下面所有除当前以外的项目这样启动更快
 
 取消WebRoot导入其他外部文件报错:Window->Preferences->MyEclipse->Validation->Disable All->Apply->OK
