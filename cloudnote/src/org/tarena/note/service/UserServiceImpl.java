@@ -39,4 +39,28 @@ public class UserServiceImpl implements UserService{
 		return result;
 	}
 
+	public NoteResult regist(String name, String password, String nickname) throws Exception {
+		NoteResult result = new NoteResult();
+		//检测用户名是否被占用
+		User has_user = userDao.findByName(name);
+		if(has_user != null){
+			result.setStatus(1);
+			result.setMsg("用户名已被占用");
+			return result;
+		}
+		//注册
+		User user = new User();
+		user.setCn_user_name(name);//设置用户名
+		user.setCn_user_nick(nickname);//设置昵称
+		String md5_pwd = NoteUtil.md5(password);
+		user.setCn_user_password(md5_pwd);//设置加密后的密码
+		String userId = NoteUtil.createId();
+		user.setCn_user_id(userId);//设置ID
+		//调用userDao保存
+		userDao.save(user);
+		result.setStatus(0);
+		result.setMsg("注册成功");
+		return result;
+	}
+
 }

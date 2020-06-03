@@ -117,3 +117,25 @@ mysql> update cn_user  set cn_user_password='gdyb21LQTcIANtvYMT7QVQ==';
 http://localhost:8080/cloudnote/user/login.do?name=tom&pwd=123
 http://localhost:8080/cloudnote/user/login.do?name=demo&pwd=/OqSD3QStdp74M9CuMk3WQ==
 http://localhost:8080/cloudnote/user/login.do?name=demo&pwd=1234
+
+===================注册=========================
+1)客户端
+  a.发送Ajax请求时机
+    点击注册按钮发送请求
+    提交用户名，昵称，密码
+  b.Ajax回调处理
+    注册成功，返回登录页面
+    注册失败，提示错误信息
+2)服务器端
+  /user/regist.do
+  -->DispatcherServlet
+  -->handlermapping
+  -->RegistController.execute
+	  -->UserService
+	  -->UserDao-->cn_user(插入)
+  -->返回NoteResult格式的json数据
+  
+UserMapper.xml->UserDao.java->UserService.java->NoteUtil.java->UserServiceImpl.java->RegistController.java->
+http://localhost:8080/cloudnote/user/regist.do?name=demo&password=123&nickname=demo
+http://localhost:8080/cloudnote/user/regist.do?name=tarena&password=123456&nickname=tarena
+  
