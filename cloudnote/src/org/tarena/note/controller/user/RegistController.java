@@ -14,8 +14,8 @@ public class RegistController {
     @Resource
 	private UserService userService;
 	
-    @RequestMapping("/regist.do")
-    @ResponseBody
+    @RequestMapping("/regist.do") // /user/regist.do
+    @ResponseBody    //返回json
 	public NoteResult execute(String name,String password,String nickname) throws Exception{
 		NoteResult result = userService.regist(name, password, nickname);
 		return result;
