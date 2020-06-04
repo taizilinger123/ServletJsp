@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.tarena.note.entity.NoteResult;
 import org.tarena.note.service.UserService;
 
-@Controller
+@Controller//扫描控制组件
 @RequestMapping("/user")
 public class RegistController {
-    @Resource
+    @Resource//注入
 	private UserService userService;
 	
     @RequestMapping("/regist.do") // /user/regist.do
-    @ResponseBody    //返回json
+    @ResponseBody    ////将返回值NoteResult转成json输出
 	public NoteResult execute(String name,String password,String nickname) throws Exception{
 		NoteResult result = userService.regist(name, password, nickname);
 		return result;
